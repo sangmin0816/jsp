@@ -35,5 +35,9 @@
   <a href="test03.jsp">값 전송</a>
   <br>
   <a href="test04.jsp?msg=한시간남았네">요청 정보 뭐시기</a>
+  <br>
+  <a href="test05.jsp">Test05</a>
+  <br>
+  <a href="test06.jsp">Test06</a>
 </body>
 </html>
