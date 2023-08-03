@@ -20,15 +20,7 @@
 <div class="container">
   <h2>Index 메인 페이지</h2>
   <br>
-  <nav class="nav">
-    <ul class="list-group">
-      <li class="list-group-item"><a href="test1.jsp?str=include">include 테스트</a></li>
-      <li class="list-group-item"><a href="test1.jsp?str=forward">forward 테스트</a></li>
-      <li class="list-group-item"><a href="test1.jsp?str=etc">etc 테스트</a></li>
-      <li class="list-group-item"><a href="test2.jsp">자바 객체 테스트</a></li>
-      <li class="list-group-item"><a href="">jsp scope 테스트</a></li>
-    </ul>
-  </nav>
+  <%@include file="./nav.jsp"%>
 </div>
 </body>
 </html>

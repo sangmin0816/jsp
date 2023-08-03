@@ -24,6 +24,7 @@
 </head>
 <body>
 <div class="container">
+    <a href="index.jsp">To Home</a>
     <h2>표값</h2>
     <ul class="list-group"></ul>
     <%

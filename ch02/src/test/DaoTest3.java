@@ -33,6 +33,7 @@ public class DaoTest3 {
                 }
             }
 
+
             System.out.print("pw를 입력하세요: ");
             String pw = sc.nextLine();
             System.out.print("name를 입력하세요: ");

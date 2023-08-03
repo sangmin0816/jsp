@@ -1,7 +1,5 @@
 package test;
 
-import test.DBC;
-
 import java.sql.*;
 import java.util.ArrayList;
 

@@ -23,6 +23,7 @@
 </head>
 <body>
 <div class="container">
+    <a href="index.jsp">To Home</a>
     <h2>여기는 항구입니다.</h2>
     <hr>
     <%

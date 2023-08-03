@@ -37,6 +37,7 @@
 <%--서버 이름과 주소가 같다.--%>
         <li><span>서버포트 원격: </span><strong><%=request.getRemotePort()%></strong></li>
         <li><span>서버포트 지역: </span><strong><%=request.getServerPort()%></strong></li>
+        <li><span>서버포트 로칼?: </span><strong><%=request.getLocalPort()%></strong></li>
         <li><span>현재문서경로: </span><strong><%=request.getContextPath() %></strong></li>
 <%--.getContextPath() 중요--%>
         <li><span>header accept: </span><strong><%=request.getHeader("Accept") %></strong></li>
