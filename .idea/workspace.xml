@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f444b3f8-fc33-46af-9304-72720b0b6d02" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/project01/web/member/idcheck.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project01/web/member/join.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project01/web/member/term.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project01/web/member/term_standard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch02/ch02.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch03/ch03.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/project01.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/member/mypage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/project01/web/member/mypage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/t_ch/ch01/ch01.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2TVhHyhBft4dvUP430FVj1nPdnT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f444b3f8-fc33-46af-9304-72720b0b6d02" name="Changes" comment="" />
+      <created>1691134071836</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691134071836</updated>
+      <workItem from="1691134073263" duration="1000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
