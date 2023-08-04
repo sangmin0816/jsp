@@ -11,8 +11,4 @@ public interface DBC {
     // close 메서드는 오버로딩
     public void close(PreparedStatement pstmt, Connection conn);
     public void close(ResultSet rs, PreparedStatement pstmt, Connection conn);
-
-    void close(Connection conn);
-
-    void close();
 }
