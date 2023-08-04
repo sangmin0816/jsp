@@ -122,7 +122,7 @@
                     <tr>
                         <th>비밀번호</th>
                         <%
-                            System.out.println(pw);
+//                            System.out.println(pw);
                             String blind_pw = pw.substring(0, 2);
                             for(int i=0; i<pw.length()-2; i++){
                               blind_pw += "*";

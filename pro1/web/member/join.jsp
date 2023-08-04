@@ -136,7 +136,11 @@
         if(id.value==""){
             alert("아이디 입력 칸이 비어있습니다.");
             id.focus();
-            return;
+            return false;
+        } else if(id.value.length<3 || id.value.length>20){
+            alert("아이디는 3글자 이상 20글자 이하입니다.")
+            id.focus()
+            return false;
         }
         else{
            child = window.open("/member/idcheck.jsp", "_child", "width=400, height=300, top=100, left=100, location=no, menubar=no, toolbar=no");

@@ -4,56 +4,12 @@
 <%@ page import="com.chunjae.db.*" %>
 <%@ page import="com.chunjae.dto.*" %>
 
-<%
-    String id = (String) session.getAttribute("id");
-    Member me = new Member();
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-    Statement stmt = null;
-    ResultSet rs = null;
-    DBC con = new MariaDBCon();
-
-    try {
-        conn = con.connect();
-        if(conn != null){
-            System.out.println("DB 연결 성공");
-        }
-        String sql = "select * from member where id=?";
-        pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, id);
-        rs = pstmt.executeQuery();
-        if(rs.next()){
-            me.setId(rs.getString("id"));
-            me.setPw(rs.getString("pw"));
-            me.setName(rs.getString("name"));
-            me.setEmail(rs.getString("email"));
-            me.setTel(rs.getString("tel"));
-            me.setRegdate(rs.getString("regdate"));
-            me.setPoint(rs.getInt("point"));
-        } else {
-            response.sendRedirect("/member/login.jsp");
-        }
-    } catch(SQLException e) {
-        System.out.println("SQL 구문이 처리되지 못했습니다.");
-    } finally {
-        con.close(rs, pstmt, conn);
-    }
-
-    String pw = me.getPw();
-    String name = me.getName();
-    String email = me.getEmail();
-    String tel = me.getTel();
-    String regdate = me.getRegdate();
-    int point = me.getPoint();
-%>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마이페이지 - 수정</title>
+    <title>회원가입</title>
     <%@ include file="../head.jsp" %>
 
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
@@ -115,35 +71,36 @@
         <section class="page" id="page1">
             <div class="page_wrap">
                 <h2 class="page_tit">회원 정보 수정</h2>
-                <form action="/member/modifypro.jsp" id="modify_form" class="frm" onsubmit="return join(this)" method="post">
+                <form action="/member/joinpro.jsp" id="join_form" class="frm" onsubmit="return join(this)" method="post">
                     <table class="tb1" id="mypage">
                         <tbody>
-                        <%
-                            System.out.println(pw);
-                            String blind_pw = pw.substring(0, 2);
-                            for(int i=0; i<pw.length()-2; i++){
-                                blind_pw += "*";
-                            }
-                        %>
-                        <input type="hidden" value="<%=pw %>" name="old_pw" id="old_pw">
+                        <%-- tr>(th+td)--%>
+                        <tr>
+                            <th>아이디</th>
+                            <td>
+                                <input type="text" name="id" id="id" class="indata" required autofocus>
+                                <button type="button" id="ck_btn" onclick="idcheck()" class="inbtn" style="margin: 10px;">아이디 중복 체크</button>
+                                <input type="hidden" name="ck_item" id="ck_item" value="false">
+                            </td>
+                        </tr>
                         <tr>
                             <th>패스워드</th>
-                            <td><input type="password" name="pw" id="pw" class="indata" placeholder="<%=blind_pw%>" ></td>
+                            <td><input type="password" name="pw" id="pw" class="indata"required></td>
                         </tr>
                         <tr>
                             <th>패스워드 확인</th>
-                            <td><input type="password" name="pw_val" id="pw_val" class="indata" placeholder="새 패스워드 확인"></td>
+                            <td><input type="password" name="pw_val" id="pw_val" class="indata"required></td>
                         </tr>
                         <tr>
                             <th>이메일</th>
-                            <td><input type="email" name="email" id="email" class="indata" value="<%=email %>"></td>
+                            <td><input type="email" name="email" id="email" class="indata"required></td>
                         </tr>
                         <tr>
                             <th>전화번호</th>
-                            <td><input type="tel" name="tel" id="tel" class="indata" value="<%=tel %>"></td>
+                            <td><input type="tel" name="tel" id="tel" class="indata"required></td>
                         </tr>
                         <tr>
-                            <td><input type="submit" value="수정" class="inbtn"></td>
+                            <td><input type="submit" value="회원가입" class="inbtn"></td>
                         </tr>
                         </tbody>
                     </table>
@@ -158,15 +115,32 @@
 
 <script>
     // 폼 입력값에 대한 유효성 검증
-    var form = document.getElementById("modify_form");
+    var form = document.getElementById("join_form");
     function join(frm){
         if(frm.pw.value === frm.pw_val.value){
             <%System.out.println("비밀번호 다름");%>
-            return true;
+            if(frm.ck_itm.value!="false"){
+                alert("아이디 중복 검색을 진행하시길 발랍니다.")
+                frm.id.focus();
+                return false;
+            }
         }
         else{
             alert("비밀번호와 비밀번호 확인이 다릅니다");
             return false;
+        }
+    }
+    function idcheck(){
+        var id = document.getElementById("id");
+        var child;
+        if(id.value==""){
+            alert("아이디 입력 칸이 비어있습니다.");
+            id.focus();
+            return;
+        }
+        else{
+           child = window.open("/member/idcheck.jsp", "_child", "width=400, height=300, top=100, left=100, location=no, menubar=no, toolbar=no");
+           return;
         }
     }
 </script>

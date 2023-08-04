@@ -1,5 +1,5 @@
 // Source code is decompiled from a .class file using FernFlower decompiler.
-package chunjae.dto;
+package com.chunjae.dto;
 
 public class Member {
   private String id;
