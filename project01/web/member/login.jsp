@@ -59,7 +59,7 @@
     </header>
     <div class="contents" id="contents">
         <div class="breadcrumb">
-            <p><a href="">HOME</a> &gt; <span>로그인</span></p>
+            <p><a href="../">HOME</a> &gt; <span>로그인</span></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">

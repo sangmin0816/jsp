@@ -26,7 +26,15 @@
         rs = pstmt.executeQuery();
         if(rs.next()){
             session.setAttribute("id", id);
-            session.setAttribute("name", rs.getString("name"));
+            Member me = new Member();
+            me.setId(rs.getString("id"));
+            me.setPw(rs.getString("pw"));
+            me.setName(rs.getString("name"));
+            me.setEmail(rs.getString("email"));
+            me.setTel(rs.getString("tel"));
+            me.setRegdate(rs.getString("regdate"));
+            me.setPoint(rs.getInt("point"));
+
             response.sendRedirect("/");
         } else {
             response.sendRedirect("/member/login.jsp");
