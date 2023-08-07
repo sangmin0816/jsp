@@ -19,12 +19,9 @@ public class MariaDBCon implements DBC {
   public Connection connect() {
     try {
       Class.forName(DRIVER);
-
-      try {
-        this.conn = DriverManager.getConnection(URL, USER, PASS);
-      } catch (SQLException var2) {
+      this.conn = DriverManager.getConnection(URL, USER, PASS);
+    } catch (SQLException var2) {
         throw new RuntimeException(var2);
-      }
     } catch (ClassNotFoundException var3) {
       throw new RuntimeException(var3);
     }

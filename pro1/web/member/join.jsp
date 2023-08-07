@@ -71,7 +71,7 @@
         <section class="page" id="page1">
             <div class="page_wrap">
                 <h2 class="page_tit">회원 정보 수정</h2>
-                <form action="/member/joinpro.jsp" id="join_form" class="frm" onsubmit="return join(this)" method="post">
+                <form action="/member/joinpro.jsp" name="frm" id="join_form" class="frm" onsubmit="return join(this)" method="post">
                     <table class="tb1" id="mypage">
                         <tbody>
                         <%-- tr>(th+td)--%>
@@ -85,19 +85,23 @@
                         </tr>
                         <tr>
                             <th>패스워드</th>
-                            <td><input type="password" name="pw" id="pw" class="indata"required></td>
+                            <td><input type="password" name="pw" id="pw" class="indata" required></td>
                         </tr>
                         <tr>
                             <th>패스워드 확인</th>
-                            <td><input type="password" name="pw_val" id="pw_val" class="indata"required></td>
+                            <td><input type="password" name="pw_val" id="pw_val" class="indata" required></td>
                         </tr>
                         <tr>
+                            <th>이름</th>
+                            <td><input type="text" name="name" id="name" class="indata" required></td>
+                        </tr
+                        <tr>
                             <th>이메일</th>
-                            <td><input type="email" name="email" id="email" class="indata"required></td>
+                            <td><input type="email" name="email" id="email" class="indata" required></td>
                         </tr>
                         <tr>
                             <th>전화번호</th>
-                            <td><input type="tel" name="tel" id="tel" class="indata"required></td>
+                            <td><input type="tel" name="tel" id="tel" class="indata" required></td>
                         </tr>
                         <tr>
                             <td><input type="submit" value="회원가입" class="inbtn"></td>

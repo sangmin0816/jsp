@@ -2,15 +2,92 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f444b3f8-fc33-46af-9304-72720b0b6d02" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/project01/web/member/idcheck.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project01/web/member/join.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project01/web/member/term.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project01/web/member/term_standard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch02/ch02.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch03/ch03.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/pro1/src/com/chunjae/dto/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pro1/web/board/addBoard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pro1/web/board/addBoardPro.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pro1/web/board/boardList.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pro1/web/board/deleteBoardPro.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pro1/web/board/getBoard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pro1/web/board/updateBoard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pro1/web/board/updateBoardPro.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pro1/web/member/idload.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pro1/web/template.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pro1/.idea/artifacts/pro1_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pro1/.idea/artifacts/pro1_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pro1/.idea/libraries/apache_tomcat_servlet_api.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pro1/.idea/libraries/apache_tomcat_servlet_api.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pro1/.idea/libraries/javax_servlet_api.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pro1/.idea/libraries/javax_servlet_api.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pro1/.idea/libraries/mariadb_jdbc_java_client.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pro1/.idea/libraries/mariadb_jdbc_java_client.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pro1/src/com/chunjae/db/MariaDBCon.java" beforeDir="false" afterPath="$PROJECT_DIR$/pro1/src/com/chunjae/db/MariaDBCon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pro1/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/pro1/web/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pro1/web/member/idcheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/pro1/web/member/idcheck.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pro1/web/member/join.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/pro1/web/member/join.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pro1/web/member/joinpro.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/pro1/web/member/joinpro.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/.idea/artifacts/project01_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/.idea/libraries/apache_tomcat_servlet_api.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/.idea/libraries/javax_servlet_api.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/.idea/libraries/mariadb_jdbc_java_client.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/.idea/webContexts.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project01/project01.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project01/web/member/mypage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/project01/web/member/mypage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/t_ch/ch01/ch01.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/src/com/chunjae/db/DBC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/src/com/chunjae/db/MariaDBCon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/src/com/chunjae/dto/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/WEB-INF/lib/javax.servlet-api-4.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/WEB-INF/lib/mariadb-java-client-3.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/WEB-INF/lib/tomcat-servlet-api-9.0.78.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/common.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/fonts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/footer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/ft.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/google.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/hd.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/head.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/header.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/bg_social_ptn01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/bg_visual_overview.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/btn_media_next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/btn_media_prev.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/chunjae1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/chunjae_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/ico_foot_sns.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/icon_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/iconset.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/img_main_keyVisual01_summer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/img_main_keyVisual03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/img_mark_foot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/img_social_main01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/img_social_main02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/img_social_main03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/img_social_main04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/logo.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/logo_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/logo_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/logo_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/logo_48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/logo_64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/logo_ori.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/thumb1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/thumb2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/thumb3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/thumb4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/thumb5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/images/thumb6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/member/idcheck.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/member/join.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/member/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/member/loginpro.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/member/logout.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/member/modify.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/member/modifypro.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/member/mypage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/member/term.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/web/member/term_standard.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,13 +102,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -41,6 +118,7 @@
       <option name="presentableId" value="Default" />
       <updated>1691134071836</updated>
       <workItem from="1691134073263" duration="1000" />
+      <workItem from="1691394594221" duration="52000" />
     </task>
     <servers />
   </component>
