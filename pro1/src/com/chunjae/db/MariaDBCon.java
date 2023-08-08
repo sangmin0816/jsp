@@ -1,4 +1,3 @@
-// Source code is decompiled from a .class file using FernFlower decompiler.
 package com.chunjae.db;
 
 import java.sql.*;
@@ -20,58 +19,30 @@ public class MariaDBCon implements DBC {
     try {
       Class.forName(DRIVER);
       this.conn = DriverManager.getConnection(URL, USER, PASS);
-    } catch (SQLException var2) {
-        throw new RuntimeException(var2);
-    } catch (ClassNotFoundException var3) {
-      throw new RuntimeException(var3);
+    } catch (SQLException | ClassNotFoundException e) {
+        throw new RuntimeException(e);
+    } catch (Exception e){
+      e.printStackTrace();
     }
-
     return this.conn;
   }
 
-  public void close(PreparedStatement pstmt, Connection conn) {
-    if (pstmt != null) {
-      try {
-        pstmt.close();
-      } catch (SQLException var5) {
-        throw new RuntimeException(var5);
-      }
-    }
-
-    if (conn != null) {
-      try {
-        conn.close();
-      } catch (SQLException var4) {
-        throw new RuntimeException(var4);
-      }
-    }
-
-  }
-
   public void close(ResultSet rs, PreparedStatement pstmt, Connection conn) {
-    if (rs != null) {
-      try {
-        rs.close();
-      } catch (SQLException var7) {
-        throw new RuntimeException(var7);
-      }
+    try{
+        if(rs!=null){
+          rs.close();
+        }
+        if(pstmt!=null){
+          pstmt.close();
+        }
+        if(conn!=null){
+          conn.close();
+        }
+    }catch(SQLException e){
+      throw new RuntimeException(e);
+    }catch(Exception e){
+        e.printStackTrace();
     }
-
-    if (pstmt != null) {
-      try {
-        pstmt.close();
-      } catch (SQLException var6) {
-        throw new RuntimeException(var6);
-      }
-    }
-
-    if (conn != null) {
-      try {
-        conn.close();
-      } catch (SQLException var5) {
-        throw new RuntimeException(var5);
-      }
-    }
-
   }
+
 }

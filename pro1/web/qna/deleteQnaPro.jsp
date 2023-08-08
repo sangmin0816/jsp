@@ -5,14 +5,13 @@
 <%@ page import="com.chunjae.dto.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 
-
 <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
     response.setContentType("text/html; charset=utf-8");
 
-    int bno = Integer.parseInt(request.getParameter("bno"));
-    System.out.println(bno);
+    String sid = (String)session.getAttribute("id");
+    int qno = Integer.parseInt(request.getParameter("qno"));
 
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -20,18 +19,17 @@
     DBC con = new MariaDBCon();
     conn = con.connect();
 
-    String sql = "delete from board where bno=?";
+    String sql = "delete from qna where qno=?";
     pstmt = conn.prepareStatement(sql);
-    pstmt.setInt(1, bno);
+    pstmt.setInt(1, qno);
     int cnt = pstmt.executeUpdate();
-    System.out.println(cnt);
 
-    if(cnt>0){
+    if (cnt > 0) {
         System.out.println("글 삭제가 완료되었습니다.");
-        response.sendRedirect("boardList.jsp");
-    } else{
+        response.sendRedirect("qnaList.jsp");
+    } else {
+        out.println("<script>history.back();</script>");
         System.out.println("sql 구문이 처리되지 않았습니다.");
     }
-
     con.close(rs, pstmt, conn);
 %>

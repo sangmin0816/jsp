@@ -3,6 +3,8 @@
 <%@ page import="java.util.*" %>
 <%@ page import="com.chunjae.db.*" %>
 <%@ page import="com.chunjae.dto.*" %>
+
+
 <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
@@ -15,7 +17,6 @@
 
     Connection conn = null;
     PreparedStatement pstmt = null;
-    Statement stmt = null;
     ResultSet rs = null;
 
     DBC con = new MariaDBCon();

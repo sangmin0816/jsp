@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%
-    String path = request.getContextPath();
+    String headPath = request.getContextPath();
 %>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,8 +20,8 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="천재교육">
 <meta property="og:description" content="앞선 생각으로 더 큰 미래의 교육을 준비하는 기업">
-<meta property="og:image" content="<%=path %>/images/chunjae_logo.png">
-<meta property="og:url" content="<%=path %>">
+<meta property="og:image" content="<%=headPath %>/images/chunjae_logo.png">
+<meta property="og:url" content="<%=headPath %>">
 
 <!-- 트위터 -->
 <meta name="twitter:card" content="picture">
@@ -45,20 +45,43 @@
 <!-- 파비콘 설정 -->
 <!-- 16x16, 24x24, 32x32, 48x48, 64x64, 96x96, 114x114, 128x128, 256x256 등을 활용-->
 <!-- 표준 파비콘 -->
-<link rel="shortcut icon" href="<%=path %>/images/logo.ico">
+<link rel="shortcut icon" href="<%=headPath %>/images/logo.ico">
 <!-- 애플 계열 모바일 -->
-<link rel="apple-touch-icon-precomposed" href="<%=path %>/images/logo_64.png">
+<link rel="apple-touch-icon-precomposed" href="<%=headPath %>/images/logo_64.png">
 <!-- IE 계열 브라우저 -->
 <meta name="msapplication-TileColor" content="#FFFFFF">
-<meta name="msapplication-TileImage" content="<%=path %>/images/logo_48.png">
+<meta name="msapplication-TileImage" content="<%=headPath %>/images/logo_48.png">
 <!-- 파이어폭스, 오페라, 또는 구형 크롬/사파리 -->
-<link rel="icon" href="<%=path %>/images/logo_16.png" sizes="16x16">
-<link rel="icon" href="<%=path %>/images/logo_32.png" sizes="32x32">
-<link rel="icon" href="<%=path %>/images/logo_48.png" sizes="48x48">
-<link rel="icon" href="<%=path %>/images/logo_64.png" sizes="64x64">
+<link rel="icon" href="<%=headPath %>/images/logo_16.png" sizes="16x16">
+<link rel="icon" href="<%=headPath %>/images/logo_32.png" sizes="32x32">
+<link rel="icon" href="<%=headPath %>/images/logo_48.png" sizes="48x48">
+<link rel="icon" href="<%=headPath %>/images/logo_64.png" sizes="64x64">
+
+<!-- 스타일 초기화 : reset.css 또는 normalize.css -->
+<link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
+
+<!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
+<link rel="stylesheet" href="../google.css">
+<link rel="stylesheet" href="../fonts.css">
+
+<!-- 필요한 플러그인 연결 -->
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="<%=headPath %>/common.css">
+<link rel="stylesheet" href="<%=headPath %>/hd.css">
+<link rel="stylesheet" href="<%=headPath %>/contents.css">
+<link rel="stylesheet" href="<%=headPath %>/ft.css">
 
 <script>
     document.oncontextmenu = function(){return false;}
     document.ondragstart = function(){return false;}
     document.onselectstart = function(){return false;}
 </script>
+
+<%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+    response.setContentType("text/html; charset=utf-8");
+%>
+
+<link rel="stylesheet" href="<%=headPath %>/dataTables.css" />
+<script src="<%=headPath %>/dataTables.js"></script>

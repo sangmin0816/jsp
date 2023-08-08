@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+
+/* 본문 영역 스타일 */
+.contents { clear:both; min-height:100vh;
+    background-image: url("./images/bg_visual_overview.jpg");
+    background-repeat: no-repeat; background-position:center -250px; }
+.contents::after { content:""; clear:both; display:block; width:100%; }
+
+.page { clear:both; width: 100vw; height: 100vh; position:relative; margin-top: 150px; display:flex; flex-wrap: wrap; justify-content: center;}
+.page::after { content:""; display:block; width: 100%; clear:both; }
+
+.page_wrap { clear:both; width: 1200px; height: auto; margin:0 auto; }
+.page_tit { font-size:48px; text-align: center; padding-top:1em; color:#fff;
+    padding-bottom: 2.4rem; }
+
+#mypage *{padding: 10px; line-height: 32px; border-top: 1px solid black; border-bottom: 1px solid black;}
+
+.breadcrumb { clear:both;
+    width:1200px; margin: 0 auto; text-align: right; color:#fff;
+    padding-top: 28px; padding-bottom: 28px; }
+.breadcrumb a { color:#fff; }
+.frm { clear:both; width:1200px; margin:0 auto; padding-top: 80px; }
+
+.tb1 { width:500px; margin:20px auto;}
+.tb1 th {width: 200px;}
+.tb1 td { width: 300px;}
+
+.indata { display:inline-block; width: 500px; height: 48px; line-height: 48px;
+    text-indent:14px; font-size:18px; }
+
+.inbtn { display:block;  border-radius:100px; min-width:140px; text-align: center; line-height: 48px; background-color: #333; color:#fff; font-size: 18px; }
+.inbtn:first-child { float:left; }
+.inbtn:last-child { float:right; }
+
+.table_container {margin:10px; width:90vw;}
+
+.board_tb {width:100%; margin: 10px auto;}
+.board_tb [class*="item"] {padding: 20px; text-align:center;}
+.board_tb thead {background-color: darkturquoise;}
+.board_tb th {border: 1px solid gray; background-color: darkturquoise;}
+.board_tb td {border: 1px solid gray;}
+.board_tb .item2.title {text-align: start;}
+td a {width: 100%; display: block;}
+
+.board_tb input {width: 100%;}
+
+.hidden {display: none;}
+
+.paragraph {margin:10px auto; padding: 15px; border: 1px solid gray; min-height: 40vh;}
+
+.row_table td{padding: 10px;}
+
+textarea{height: 50vh; width: 100%; box-sizing: border-box;}
