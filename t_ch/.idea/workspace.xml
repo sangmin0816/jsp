@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8e138bb2-bf9a-490d-a280-43e55839201d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../pro1/src/com/chunjae/dto/Faq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pro1/web/faq/addFaq.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pro1/web/faq/deleteFaq.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pro1/web/faq/faqList.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pro1/web/faq/updateFaq.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pro1/web/qna/addQna.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pro1/web/qna/addQnaPro.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pro1/web/board/getBoard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../pro1/web/board/getBoard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pro1/web/contents.css" beforeDir="false" afterPath="$PROJECT_DIR$/../pro1/web/contents.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pro1/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../pro1/web/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pro1/web/qna/deleteQnaPro.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../pro1/web/qna/deleteQnaPro.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pro1/web/qna/getQna.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../pro1/web/qna/getQna.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch01/ch01.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch02/ch02.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2Tjq1eBBanSuCocyY7dtpSABKFo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8e138bb2-bf9a-490d-a280-43e55839201d" name="Changes" comment="" />
+      <created>1691566623717</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691566623717</updated>
+      <workItem from="1691566625077" duration="4000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
