@@ -16,7 +16,7 @@
 </head>
 
 <%
-    int qno = Integer.parseInt(request.getParameter("qno"));
+    int fno = Integer.parseInt(request.getParameter("fno"));
     Connection conn = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
@@ -24,16 +24,15 @@
     DBC con = new MariaDBCon();
     conn = con.connect();
 
-    String sql = "SELECT a.*, b.name FROM qna a  INNER JOIN member b ON a.author=b.id WHERE a.qno=?";
+    String sql = "SELECT * FROM faq WHERE fno=?";
     pstmt = conn.prepareStatement(sql);
-    pstmt.setInt(1, qno);
+    pstmt.setInt(1, fno);
     rs = pstmt.executeQuery();
 
-    Qna ql = new Qna();
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 hh시 mm분 ss초");
+    Faq fq = new Faq();
 
     if(rs.next()){
-        ql = new Qna(rs.getInt("qno"), rs.getString("title"), rs.getString("content"), rs.getString("author"), rs.getString("name"), sdf.format(rs.getDate("resdate")), rs.getInt("cnt"), rs.getInt("lev"), rs.getInt("par"));
+      fq = new Faq(rs.getInt("fno"), rs.getString("question"), rs.getString("answer"), rs.getInt("cnt"));
     }
 %>
 
@@ -45,46 +44,39 @@
     </header>
 
     <%
-        if(sid==null){
-            response.sendRedirect("/qna/qnaList.jsp");
+        if(sid==null || !sid.equals("admin")){
+            response.sendRedirect("/faq/faqList.jsp");
         }
     %>
     <div class="contents" id="contents">
-        <div class="breadcrumb">
-            <p><a href="../">HOME</a> &gt; <span>QnA</span></p>
+        <div class="banner">
+            <div class="breadcrumb">
+                <p><a href="../">HOME</a> &gt; <span>FAQ</span></p>
+            </div>
+            <h2 class="page_tit">FAQ</h2>
         </div>
-        <section class="page" id="page1">
+        <section class="my_page">
             <div class="table_container">
-                <form action="updateQnaPro.jsp" id="update_form" method="post">
+                <form action="updateFaqPro.jsp" id="update_form" method="post">
                     <table class="board_tb" id="myTable">
                         <thead>
                         <tr>
-                            <th class="hidden">par</th>
-                            <th class="hidden">level</th>
-                            <th class="hidden">qno</th>
-                            <th class="item2">글제목</th>
-                            <th class="item3">작성자</th>
-                            <th class="item4">작성일</th>
-                            <th class="item5">조회수</th>
+                            <th class="item2">질문</th>
+                            <th class="item3">답변</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td class="hidden"><%=ql.getPar()%></td>
-                            <td class="hidden"><%=ql.getLev()%></td>
-                            <td class="hidden">
-                                <input type="hidden" class="indata" name="qno" id="qno" value="<%=ql.getQno()%>">
+                            <input type="hidden" name="fno" id="fno" value="<%=fq.getFno()%>">
+                            <td class="item1">
+                                <textarea name="new_question" id="new_question"><%=fq.getQuestion()%></textarea>
                             </td>
                             <td class="item2">
-                                <input type="text" class="indata" name="title" id="title" value="<%=ql.getTitle() %>">
+                                <textarea name="new_answer" id="new_answer"><%=fq.getAnswer()%></textarea>
                             </td>
-                            <td class="item3"><%=ql.getAuthor() %></td>
-                            <td class="item4"><%=ql.getResdate() %> </td>
-                            <td class="item5"><%=ql.getCnt() %> </td>
                         </tr>
                         </tbody>
                     </table>
-                    <textarea class="paragraph" name="new_content" id="new_content"><%=ql.getContent()%></textarea>
                     <input type="submit" value="작성완료" class="inbtn">
                 </form>
             </div>

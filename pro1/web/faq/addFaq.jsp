@@ -30,17 +30,20 @@
             <p><a href="../">HOME</a> &gt; <span>질문</span></p>
         </div>
         <section class="page" id="page1">
-            <form action="addQPro.jsp" id="update_form" method="post">
+            <form action="addFaqPro.jsp" id="update_form" method="post">
                 <div class="table_container">
                     <table class="board_tb">
                         <tbody>
                         <tr>
-                            <th>질문글 제목</th>
-                            <td><input class="indata" type="text" name="title" id="title" autofocus placeholder="글 제목을 입력"></td>
+                            <th>질문</th>
+                            <td><textarea name="new_question" id="new_question"  style="padding: 15px; width:100%; height: 60vh;" placeholder="질문 입력"></textarea></td>
+                        </tr>
+                        <tr>
+                            <th>답변</th>
+                            <td><textarea name="new_answer" id="new_answer"  style="padding: 15px; width:100%; height: 60vh;" placeholder="답변 입력"></textarea></td>
                         </tr>
                         </tbody>
                     </table>
-                    <textarea name="new_content" id="new_content"  style="padding: 15px; width:100%; height: 60vh;" placeholder="글 내용 입력"></textarea>
                 </div>
                 <%if(sid!=null){%>
                 <input type="submit" value="작성완료" class="inbtn">

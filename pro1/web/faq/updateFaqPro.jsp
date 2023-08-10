@@ -11,32 +11,31 @@
     response.setContentType("text/html; charset=utf-8");
 
     String sid = (String)session.getAttribute("id");
-    String title = request.getParameter("title");
-    String new_content = request.getParameter("new_content");
-    int qno = Integer.parseInt(request.getParameter("qno"));
+    String new_question = request.getParameter("new_question");
+    String new_answer = request.getParameter("new_answer");
+    int fno = Integer.parseInt(request.getParameter("fno"));
 
-    if(title==null || title.equals("")){
-        System.out.println("타이틀이 그러면 안 돼지");
+    if(new_question==null || new_question.equals("")){
+        System.out.println("타이틀 없음");
         out.println("<script>history.back();</script>");
     }
     else {
-        System.out.println(sid + " " + title + "\n" + new_content);
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         DBC con = new MariaDBCon();
         conn = con.connect();
 
-        String sql = "update qna set title=?, content=? where qno=?";
+        String sql = "update faq set question=?, answer=? where fno=?";
         pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, title);
-        pstmt.setString(2, new_content);
-        pstmt.setInt(3, qno);
+        pstmt.setString(1, new_question);
+        pstmt.setString(2, new_answer);
+        pstmt.setInt(3, fno);
         int cnt = pstmt.executeUpdate();
 
         if (cnt > 0) {
             System.out.println("글 수정이 완료되었습니다.");
-            response.sendRedirect("qnaList.jsp");
+            response.sendRedirect("faqList.jsp");
         } else {
             out.println("<script>history.back();</script>");
             System.out.println("sql 구문이 처리되지 않았습니다.");

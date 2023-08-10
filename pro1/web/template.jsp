@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
-    <%@ include file="/head.jsp" %>
+    <%@ include file="../head.jsp" %>
 
 </head>
 
@@ -26,7 +26,15 @@
         <%@ include file="../header.jsp" %>
     </header>
     <div class="contents" id="contents">
+        <div class="banner">
+            <div class="breadcrumb">
+                <p><a href="../">HOME</a> &gt; <span>FAQ</span></p>
+            </div>
+            <h2 class="page_tit">FAQ</h2>
+        </div>
+        <div class="my_page">
 
+        </div>
 
 
 

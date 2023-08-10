@@ -115,7 +115,7 @@
     function isDelete(){
         let isdelete = confirm("정말 삭제하시겠습니까?");
         if(isdelete){
-            location.href = "/qna/deleteQnaPro.jsp?qno=<%=ql.getQno()%>";
+            location.href = "/qna/deleteQnaPro.jsp?qno=<%=ql.getQno()%>&lev=<%=ql.getLev()%>";
         }
     }
 </script>

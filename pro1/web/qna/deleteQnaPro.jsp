@@ -12,6 +12,7 @@
 
     String sid = (String)session.getAttribute("id");
     int qno = Integer.parseInt(request.getParameter("qno"));
+    int lev = Integer.parseInt(request.getParameter("lev"));
 
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -19,7 +20,13 @@
     DBC con = new MariaDBCon();
     conn = con.connect();
 
-    String sql = "delete from qna where qno=?";
+    String sql = "";
+    if(lev==0){
+      sql = "delete from qna where par=?";
+    }
+    else{
+        sql = "delete from qna where qno=?";
+    }
     pstmt = conn.prepareStatement(sql);
     pstmt.setInt(1, qno);
     int cnt = pstmt.executeUpdate();

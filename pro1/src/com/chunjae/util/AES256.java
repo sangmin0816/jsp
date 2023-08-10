@@ -1,4 +1,4 @@
-package kr.co.myshop.util;
+package com.chunjae.util;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;

@@ -63,8 +63,8 @@
                 <ul class="sub">
                     <li><a href="/board/boardList.jsp">공지사항</a></li>
                     <li><a href="/qna/qnaList.jsp">QnA</a></li>
-                    <li><a href="promotion.html#sns">SNS</a></li>
-                    <li><a href="promotion.html#story">천재이야기</a></li>
+                    <li><a href="/faq/faqList.jsp">FAQ</a></li>
+                    <li><a href="/online/online.jsp">온라인 상담</a></li>
                 </ul>
             </li>
             <li class="item5">
