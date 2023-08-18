@@ -4,16 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <%
-        request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html; charset=utf-8");
-    %>
+    <title>Title</title>
 </head>
 <body>
-<div class="container">
-    <a href="../index.jsp">To Home</a>
-</div>
+
 </body>
 </html>
