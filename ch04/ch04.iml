@@ -19,8 +19,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="javax.servlet.api" level="project" />
     <orderEntry type="library" name="jstl" level="project" />
     <orderEntry type="library" name="apache.tomcat.servlet.api" level="project" />
+    <orderEntry type="library" name="javax.servlet.api" level="project" />
   </component>
 </module>
