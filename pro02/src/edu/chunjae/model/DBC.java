@@ -1,18 +1,13 @@
 package edu.chunjae.model;
 
-import java.awt.*;
-import java.lang.reflect.Field;
 import java.sql.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 public class DBC {
   private String DRIVER;
   private String DNS = "localhost:";
   private String PORT;
-  private String DB;
-  private String USER;
+  private String DB = "sangmin";
+  private String USER = "root";
   private String PASS = "1234";
   private String URL;
   Connection conn = null;
@@ -51,6 +46,33 @@ public class DBC {
     this.URL = URL;
   }
 
+  public String getDRIVER() {
+    return DRIVER;
+  }
+
+  public String getDNS() {
+    return DNS;
+  }
+
+  public String getPORT() {
+    return PORT;
+  }
+
+  public String getDB() {
+    return DB;
+  }
+
+  public String getUSER() {
+    return USER;
+  }
+
+  public String getPASS() {
+    return PASS;
+  }
+
+  public String getURL() {
+    return URL;
+  }
 
   public Connection connect() {
     try {

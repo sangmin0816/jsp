@@ -1,12 +1,11 @@
-package io.github.sangmin0816.model;
+package edu.chunjae.model;
 
-import io.github.sangmin0816.dto.Member;
+import edu.chunjae.dto.Member;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +16,47 @@ public class MemberDAO {
   ResultSet rs = null;
 
   public MemberDAO() {
+  }
+  public int loginMember(String id, String pw){
+    int cnt = 0;
+    conn = db.connect();
+
+    String sql = "select * from member where id = ? and pw=?";
+
+    try {
+      pstmt = conn.prepareStatement(sql);
+      pstmt.setString(1, id);
+      pstmt.setString(2, pw);
+      cnt = pstmt.executeUpdate();
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    } finally{
+      db.close(rs, pstmt, conn);
+    }
+
+    return cnt;
+  }
+
+  public List<String> getMemberIdList(){
+    conn = db.connect();
+    List<String> memberList = new ArrayList<>();
+    String sql = "select id from member";
+
+    try {
+      pstmt = conn.prepareStatement(sql);
+      rs = pstmt.executeQuery();
+
+      while(rs.next()){
+        memberList.add(rs.getString("id"));
+      }
+
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    } finally{
+      db.close(rs, pstmt, conn);
+    }
+
+    return memberList;
   }
 
   public List<Member> getMemberList(){

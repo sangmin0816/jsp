@@ -1,4 +1,4 @@
-package com.grownjoy.util;
+package edu.chunjae.util;
 
 import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
@@ -6,6 +6,7 @@ import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.security.*;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.InvalidParameterSpecException;
@@ -65,7 +66,7 @@ public class AES256 {
      */
     public static String encryptAES256(String msg, String key) throws NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidKeyException, InvalidParameterSpecException, UnsupportedEncodingException, BadPaddingException, IllegalBlockSizeException {
         SecureRandom random = new SecureRandom();
-        byte bytes[] = new byte[20];
+        byte[] bytes = new byte[20];
         random.nextBytes(bytes);
         byte[] saltBytes = bytes;
 
@@ -85,7 +86,7 @@ public class AES256 {
         // Initial Vector(1단계 암호화 블록용)
         byte[] ivBytes = params.getParameterSpec(IvParameterSpec.class).getIV();
 
-        byte[] encryptedTextBytes = cipher.doFinal(msg.getBytes("UTF-8"));
+        byte[] encryptedTextBytes = cipher.doFinal(msg.getBytes(StandardCharsets.UTF_8));
 
         byte[] buffer = new byte[saltBytes.length + ivBytes.length + encryptedTextBytes.length];
         System.arraycopy(saltBytes, 0, buffer, 0, saltBytes.length);

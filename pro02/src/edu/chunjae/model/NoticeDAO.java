@@ -1,4 +1,5 @@
 package edu.chunjae.model;
+
 import edu.chunjae.dto.Notice;
 
 import java.sql.Connection;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NoticeDAO {
-  static DBC db = new PostgreCon();
+  static DBC db = new MariaDBCon();
   Connection conn = null;
   PreparedStatement pstmt = null;
   ResultSet rs = null;
@@ -22,14 +23,14 @@ public class NoticeDAO {
   public List<Notice> getNoticeList(){
     conn = db.connect();
     List<Notice> noticeList = new ArrayList<>();
-    String sql = "select * from notice";
+    String sql = "select * from notice order by regdate desc";
 
     try {
       pstmt = conn.prepareStatement(sql);
       rs = pstmt.executeQuery();
 
       while(rs.next()){
-        noticeList.add(new Notice(rs.getInt("no"), rs.getString("title"), rs.getString("content"), sdf.format(rs.getDate(("resdate"))), rs.getInt("visited")));
+        noticeList.add(new Notice(rs.getInt("no"), rs.getString("title"), rs.getString("content"), sdf.format(rs.getDate(("regdate"))), rs.getInt("visited")));
       }
 
     } catch (SQLException e) {
@@ -53,7 +54,7 @@ public class NoticeDAO {
       rs = pstmt.executeQuery();
 
       if(rs.next()){
-        notice = new Notice(rs.getInt("no"), rs.getString("title"), rs.getString("content"), sdf.format(rs.getDate(("resdate"))), rs.getInt("visited"));
+        notice = new Notice(rs.getInt("no"), rs.getString("title"), rs.getString("content"), sdf.format(rs.getDate(("regdate"))), rs.getInt("visited"));
       }
 
     } catch (SQLException e) {
@@ -90,7 +91,7 @@ public class NoticeDAO {
     int cnt = 0;
 
     conn = db.connect();
-    String sql = "update set title=?, content=? where no=?";
+    String sql = "update notice set title=?, content=? where no=?";
 
     try {
       pstmt = conn.prepareStatement(sql);

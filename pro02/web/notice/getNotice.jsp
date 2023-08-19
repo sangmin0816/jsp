@@ -1,5 +1,3 @@
-<%@ page import="edu.chunjae.dto.Notice" %>
-<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -10,22 +8,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항 페이지</title>
-    <c:set var="path" value="<%=request.getContextPath() %>" />
     <%@ include file="../common.jsp"%>
-    <style>
-        #tb1 { width:960px; margin:40px auto; }
-        #tb1 th { background-color: #111; color:#fff; }
-        .item1 { width:10%; }
-        .item2 { width:60%; }
-        .item3 { width:20%; }
-        .item4 { width:10%; }
-        #page-nation1 { width: 960px; margin:20px auto; }
-    </style>
 </head>
-
-<%
-%>
-
 <body>
 <div class="container-fluid">
     <%@ include file="../header.jsp"%>
@@ -33,9 +17,9 @@
         <nav aria-label="breadcrumb container-fluid" style="padding-top:28px; border-bottom:2px solid #666;">
             <div class="container">
                 <ol class="breadcrumb justify-content-end">
-                    <li class="breadcrumb-item"><a href="${path }">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Notice</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">List</li>
+                    <li class="breadcrumb-item"><a href="${rootPath }">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Community</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Notice</li>
                 </ol>
             </div>
         </nav>

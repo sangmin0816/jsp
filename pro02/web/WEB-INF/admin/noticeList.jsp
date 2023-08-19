@@ -40,7 +40,7 @@
                 <tr>
                     <td class="item1">${status.count}</td>
                     <td class="item2">
-                        <a  class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" href="${rootPath }/AdminNotice.do?no=${notice.no}">${notice.title}</a>
+                        <a  class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" href="${rootPath }/NoticeGetAdmin.do?no=${notice.no}">${notice.title}</a>
                     </td>
                     <td class="item3">${notice.resdate}</td>
                     <td class="item4">${notice.visited}</td>
@@ -48,7 +48,7 @@
                 </c:forEach>
                 </tbody>
             </table>
-            <a class="btn btn-primary" href="${rootPath }/AddNotice.do" role="button">글 추가</a>
+            <a class="btn btn-primary" href="${rootPath }/NoticeAdd.do" role="button">글 추가</a>
             <nav aria-label="Page navigation example" id="page-nation1">
                 <ul class="pagination">
                     <li class="page-item"><a class="page-link" href="#">Previous</a></li>

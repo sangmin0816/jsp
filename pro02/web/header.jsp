@@ -44,9 +44,9 @@
                         </li>
                     </ul>
                     <ul class="nav justify-content-end">
-                        <li class="nav-item"><a href="${rootPath }/Login.do" class="nav-link">Login</a></li>
-                        <li class="nav-item"><a href="${rootPath }/Join.do" class="nav-link">Join</a></li>
-                        <li class="nav-item"><a href="${rootPath }/AdminNoticeList.do" class="nav-link">AdminPage</a></li>
+                        <li class="nav-item"><a href="${rootPath }/member/login.jsp" class="nav-link">Login</a></li>
+                        <li class="nav-item"><a href="${rootPath }/member/term.jsp" class="nav-link">Join</a></li>
+                        <li class="nav-item"><a href="${rootPath }/NoticeListAdmin.do" class="nav-link">AdminPage</a></li>
                     </ul>
                 </div>
             </div>

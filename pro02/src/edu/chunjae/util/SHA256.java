@@ -1,4 +1,4 @@
-package com.grownjoy.util;
+package edu.chunjae.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

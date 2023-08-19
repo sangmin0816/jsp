@@ -1,7 +1,8 @@
 package edu.chunjae.controller.admin;
 
-import io.github.sangmin0816.dto.Notice;
-import io.github.sangmin0816.model.NoticeDAO;
+
+import edu.chunjae.dto.Notice;
+import edu.chunjae.model.NoticeDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

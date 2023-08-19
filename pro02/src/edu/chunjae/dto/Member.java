@@ -1,6 +1,4 @@
-package io.github.sangmin0816.dto;
-
-import java.util.Date;
+package edu.chunjae.dto;
 
 public class Member {
   private String id;

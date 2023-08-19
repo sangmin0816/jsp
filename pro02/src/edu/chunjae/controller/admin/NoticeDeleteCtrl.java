@@ -1,6 +1,6 @@
 package edu.chunjae.controller.admin;
 
-import io.github.sangmin0816.model.NoticeDAO;
+import edu.chunjae.model.NoticeDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
