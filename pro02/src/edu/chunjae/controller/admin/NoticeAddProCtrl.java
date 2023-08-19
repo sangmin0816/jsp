@@ -1,9 +1,8 @@
 package edu.chunjae.controller.admin;
 
-import edu.chunjae.dto.Notice;
-import edu.chunjae.model.NoticeDAO;
+import io.github.sangmin0816.dto.Notice;
+import io.github.sangmin0816.model.NoticeDAO;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/AddNoticePro.do") // 사용자가 보는 이름
-public class AddNoticeProCtrl extends HttpServlet {
+@WebServlet("/NoticeAddPro.do") // 사용자가 보는 이름
+public class NoticeAddProCtrl extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     // addNotice.jsp의 form에서 post method로 보내므로, doPost로 받아야 함
@@ -32,7 +31,7 @@ public class AddNoticeProCtrl extends HttpServlet {
 
     if(cnt>0){
       System.out.println("성공적으로 추가되었습니다.");
-      response.sendRedirect(path+"/AdminNoticeList.do");
+      response.sendRedirect(path+"/NoticeListAdmin.do");
     } else{
       System.out.println("오류로 인해 제대로 처리되지 않았습니다.");
       PrintWriter out = response.getWriter();

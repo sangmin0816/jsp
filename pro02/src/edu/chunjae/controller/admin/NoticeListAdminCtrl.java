@@ -1,7 +1,7 @@
 package edu.chunjae.controller.admin;
 
-import edu.chunjae.dto.Notice;
-import edu.chunjae.model.NoticeDAO;
+import io.github.sangmin0816.dto.Notice;
+import io.github.sangmin0816.model.NoticeDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/AdminNoticeList.do")
-public class AdminNoticeListCtrl extends HttpServlet {
+@WebServlet("/NoticeListAdmin.do")
+public class NoticeListAdminCtrl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("msg", "공지사항 목록을 출력합니다.");
