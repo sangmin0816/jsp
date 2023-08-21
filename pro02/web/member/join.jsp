@@ -6,126 +6,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
     <%@ include file="../common.jsp" %>
+    <style>
+        .row {margin: 20px auto;}
+    </style>
 </head>
 <body>
 <div class="wrap">
 <%@ include file="../header.jsp" %>
-<div class="contents" id="contents">
-    <div class="sub">
-        <h2>회원가입</h2>
-    </div>
-    <div class="breadcrumb">
-        <p><a href="">HOME</a> &gt; <span>회원가입</span></p>
-    </div>
-    <h2 class="page_tit">회원가입</h2>
-    <br><br><br>
-    <form name="frm1" class="frm" action="${rootPath}/JoinPro.do" method="post" onsubmit="return inform(this)">
-        <div class="join">
-            <table>
-                <colgroup>
-                    <col style="width:15%">
-                    <col style="width:auto">
-                    <col style="width:20%">
-                </colgroup>
-                <tbody>
-                <tr>
-                    <th><label for="name">이름<span class="important">*</span></label></th>
-                    <td colspan="2"><input type="text" id="name" name="name" required ></td>
-                </tr>
-                <tr>
-                    <th><label for="id">아이디<span class="important">*</span></label></th>
-                    <td colspan="2"><input type="button" id="id" name="id" required placeholder="12글자 이내로만 입력가능합니다." onclick="idcheck()">
-                        <div id="checkResult" class="check_result"></div></td>
-                    <input type="hidden" name="ck_item" id="ck_item" value="no">
-                </tr>
-                <tr>
-                    <th><label for="pw">비밀번호<span class="important">*</span></label></th>
-                    <td><input type="password" id="pw" name="pw" required></td>
-                    <td class="use_btn" rowspan="2"><button type="button"  class="inBtn1" onclick="pwcheck()">비밀번호 확인</button></td>
-                </tr>
-                <tr>
-                    <th><label for="pwChk">비밀번호 확인<span class="important">*</span></label></th>
-                    <td><input type="password" id="pwChk" name="pwChk" required>
-                        <button type="button"  class="inBtn inBtn1 center" onclick="togglePasswordVisibility('pw')">입력값 확인</button>
-                        <div id="checkResult1" class="check_result"></div></td>
-                </tr>
-                <tr>
-                    <th><label for="email">이메일<span class="important">*</span></label></th>
-                    <td colspan="2"><input type="email" id="email" name="email" required></td>
-                </tr>
-                <tr>
-                    <th><label for="tel">전화번호<span class="important">*</span></label></th>
-                    <td colspan="2"><input type="tel" id="tel" name="tel" required></td>
-                </tr>
-                </tbody>
-            </table>
-            <div class="btn_area" style="text-align:center;">
-                <a href="/" class="inBtn inBtn1">취소하기</a>
-                <input type="submit" value="제출하기" class="inBtn inBtn2">
+    <div class="container contents text-center">
+        <form action="${rootPath}/JoinPro.do" method="post" onsubmit="return inform(this)">
+            <div class="row">
+                <div class="col-2"><label for="name" class="form-label">이름</label></div>
+                <div class="col-8"><input type="text" class="form-control col-10" id="name" name="name"></div>
             </div>
-        </div>
-    </form>
-    <script>
-        function inform(frm){
-            var ck_item = frm.ck_item;
-            //var ck_item = document.getElementById("ck_item");
-            if(ck_item.value!="yes"){
-                alert("아이디 중복 검사를 진행하시기 바랍니다.");
-                frm.id.focus();
-                return false;
-                console.log();
-            }
-            var pw = frm.pw.value;
-            var pw2 = frm.pw2.value;
-            if(pw!=pw2){
-                alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
-                frm.pw.focus();
-                return false;
-            }
-        }
-
-        function idcheck(){
-            var child;
-            var id = document.getElementById("id");
-            <c:forEach var="idList" items="${memberList}">
-                if(id.value==idList){
-                    alert("해당 아이디는 이미 사용 중입니다.");
-                    return false;
-                }
-            </c:forEach>
-            var checkResult = document.getElementById("checkResult");
-            checkResult.innerHTML = "&nbsp;<span style='color: blue;'> 중복확인 완료</span>";
-            document.getElementById("id").value = id;
-            document.getElementById("ck_item").value = "yes";
-        }
-
-        function pwcheck() {
-            var pw = document.getElementById("pw");
-            var pw2 = document.getElementById("pwChk");
-            var checkResult = document.getElementById("checkResult1");
-
-            if (pw.value !== pw2.value) {
-                checkResult.innerHTML = "&nbsp;<span style='color: red;'>비밀번호가 서로 다릅니다.</span>";
-            } else {
-                checkResult.innerHTML = "&nbsp;<span style='color: blue;'>비밀번호가 서로 일치합니다.</span>";
-            }
-        }
-        function togglePasswordVisibility(inputId) {
-            var pw= document.getElementById("pw")
-            var pw2=document.getElementById("pwChk")
-
-            if(pw.type==="password"){
-                pw.type="text";
-            }else{
-                pw.type="password";
-            }
-            if(pw2.type==="password"){
-                pw2.type="text";
-            }else {
-                pw2.type="password";
-            }
-        }
-    </script>
+            <div class="row">
+                <div class="col-2"><label for="id" class="form-label">아이디</label></div>
+                <div class="col-8">
+                    <input type="text" class="form-control" id="id" name="id" aria-describedby="idStatus">
+                    <div id="idStatus" class="form-text text-start">아이디 중복 검사를 진행해주세요.</div>
+                </div>
+                <div class="col-2"><button type="button" class="btn btn-primary mb-3" onclick="idcheck()">중복검사</button></div>
+                <input type="hidden" id="idck" value="no">
+            </div>
+            <div class="row">
+                <div class="col-2"><label for="pw" class="form-label">비밀번호</label></div>
+                <div class="col-3"><input type="password" class="form-control" id="pw" name="pw" placeholder="비밀번호" required></div>
+                <div class="col-3">
+                    <input type="password" class="form-control" id="pwchk" name="pwchk" placeholder="비밀번호 확인" required>
+                </div>
+                <div class="col-4"><div id="pwStatus" class="form-text text-start">비밀번호와 비밀번호 확인이 일치하지 않습니다.</div></div>
+                <input type="hidden" id="pwck" value="no">
+            </div>
+            <div class="row">
+                <div class="col-2"><label for="email" class="form-label">이메일</label></div>
+                <div class="col-8"><input type="email" class="form-control" id="email" name="email"></div>
+            </div>
+            <div class="row">
+                <div class="col-2"><label for="tel" class="form-label">전화번호</label></div>
+                <div class="col-8"><input type="tel" class="form-control" id="tel" name="tel"></div>
+            </div>
+            <div class="row">
+                <div class="col-2"><label for="birth">생년월일</label></div>
+                <div class="col-4"><input type="date" class="form-control" id="birth" name="birth" value="1999-01-01"></div>
+            </div>
+            <div class="row">
+                <div class="col-2"><label for="address1" class="form-label">주소</label></div>
+                <div class="col-4"><input type="text" class="form-control" id="address1" name="address1"></div>
+                <div class="col-4"><input type="text" class="form-control" id="postcode" name="postcode" placeholder="우편번호"></div>
+                <div class="col-2"><button type="button" class="btn btn-primary mb-3" onclick="findAddr()">우편번호 검색</button></div>
+            </div>
+            <div class="row">
+                <div class="col-2"><label for="address2" class="form-label">상세 주소</label></div>
+                <div class="col-8"><input type="text" class="form-control" id="address2" name="address2"></div>
+                <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+            </div>
+            <input type="submit" class="btn btn-primary mb-3" value="가입하기">
+        </form>
+    </div>
 <%@ include file="../footer.jsp" %>
 </body>
 </html>
+
+<script>
+    $(document).ready(function(){
+        $("#pwchk").keyup(function(){
+            if($("#pw").val()===""||$("#pwchk").val()===""){
+                console.log($("#pwchk").val())
+                $("#pwStatus").html("<strong style='color: red'>비밀번호를 입력하세요.</strong>");
+                $("#pwck").val("no");
+            }
+            else if($("#pw").val()==$("#pwchk").val()){
+                $("#pwStatus").html("<strong style='color: green'>비밀번호가 일치합니다.</strong>");
+                $("#pwck").val("yes");
+            } else{
+                $("#pwStatus").text("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+                $("#pwck").val("no");
+            }
+        })
+
+        $("#id").keyup(function(){
+            $("#idck").val("no");
+            $("#idStatus").text("아이디 중복 검사를 진행해주세요");
+        })
+    })
+
+    function inform(frm){
+        if($("#idck").val()!="yes"){
+            alert("아이디 중복 검사를 진행하지 않았습니다.")
+            $("#id").focus();
+            return false;
+        }
+        if($("#pwck").val()!="yes"){
+            alert("비밀번호를 다시 확인해주십시오.");
+            $("#pw").focus();
+            return false;
+        }
+    }
+
+    function idcheck(rootPath){
+        if($("#id").val()==""){
+            alert("아이디를 입력하지 않았습니다.")
+            $("#id").focus();
+            return false;
+        }
+        var params = {id:$("#id").val()}
+        $.ajax({
+            url:"${rootPath }/IdCheck.do",
+            type: "post",
+            dataType: "json",
+            data: params,
+            success: function(data){
+                var idPass = data.result;
+                if(idPass){
+                    console.log(idPass);
+                    $("#idck").val("no");
+                    $("#idStatus").html("<strong style='color:red;'>사용할 수 없는 아이디 입니다.</strong>");
+                    $("#id").focus();
+                }
+                else if(idPass===false){
+                    $("#idck").val("yes");
+                    $("#idStatus").html("<strong style='color:green;'>사용할 수 있는 아이디 입니다.</strong>");
+                } else{
+                    $("#idStatus").html("<strong style='color:red;'>아이디가 확인되지 않았습니다. 다시 시도하시길 바랍니다.</strong>");}
+            }
+        })
+    }
+
+    function findAddr(){
+        new daum.Postcode({
+            oncomplete:function(data){
+                console.log(data);
+                var roadAddr = data.roadAddress;
+                var jibunAddr = data.jibunAddress;
+                document.getElementById("postcode").value = data.zonecode;
+                if(roadAddr !== ''){
+                    document.getElementById("address1").value = roadAddr;
+                } else if(jibunAddr !== ''){
+                    document.getElementById("address1").value = jibunAddr;
+                }
+                document.getElementById("address2").focus();
+            }
+        }).open();
+    }
+</script>

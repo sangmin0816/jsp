@@ -8,12 +8,12 @@
         <dependency maven-id="net.java.dev.jna:jna-platform" />
         <dependency maven-id="net.java.dev.jna:jna" />
         <dependency maven-id="org.checkerframework:checker-qual" />
+        <dependency maven-id="org.slf4j:jcl-over-slf4j" />
         <dependency maven-id="org.slf4j:slf4j-api" />
       </exclude>
     </properties>
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/org/mariadb/jdbc/mariadb-java-client/3.1.4/mariadb-java-client-3.1.4.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/jcl-over-slf4j/1.7.36/jcl-over-slf4j-1.7.36.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -19,7 +19,7 @@
         <div class="page_wrap">
             <h2 class="page_tit">로그인</h2>
             <div class="login_area">
-                <form action="${rootPath}/Login.do" id="login_frm" class="frm" method="post">
+                <form action="${rootPath}/LoginPro.do" id="login_frm" class="frm" method="post">
                     <table class="tb1">
                         <tbody>
                         <tr>

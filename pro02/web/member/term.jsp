@@ -348,7 +348,6 @@
                         location.href = "${rootPath}/Join.do";
                     } else if(ck_item1.checked || ck_item2.checked){
                         alert("약관에 동의하지 않으셨습니다.");
-
                     }
                 });
             </script>

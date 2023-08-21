@@ -21,7 +21,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="${rootPath }/ProList.do">교과서</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">참고서</a></li>
+                                <li><a class="dropdown-item" href="${rootPath }/SourceUpload.do">업로드</a></li>
                                 <li><a class="dropdown-item" href="#">문제집</a></li>
                             </ul>
                         </li>

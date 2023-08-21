@@ -1,6 +1,7 @@
 package edu.chunjae.model;
 
 import edu.chunjae.dto.Member;
+import edu.chunjae.util.AES256;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,49 +15,52 @@ public class MemberDAO {
   Connection conn = null;
   PreparedStatement pstmt = null;
   ResultSet rs = null;
+  String key = "%02x";
 
   public MemberDAO() {
   }
-  public int loginMember(String id, String pw){
-    int cnt = 0;
+
+
+
+  public boolean loginMember(String id, String pw){
     conn = db.connect();
 
-    String sql = "select * from member where id = ? and pw=?";
+    String sql = "select * from member where id = ?";
 
     try {
       pstmt = conn.prepareStatement(sql);
       pstmt.setString(1, id);
-      pstmt.setString(2, pw);
-      cnt = pstmt.executeUpdate();
-    } catch (SQLException e) {
+      rs = pstmt.executeQuery();
+
+      if(rs.next()){
+        String decrypt = AES256.decryptAES256(rs.getString("pw"), key);
+        if(decrypt.equals(pw)){
+          return true;
+        }
+      }
+    } catch (Exception e) {
       throw new RuntimeException(e);
     } finally{
       db.close(rs, pstmt, conn);
     }
-
-    return cnt;
+    return false;
   }
 
-  public List<String> getMemberIdList(){
+  public boolean checkId(String id){
     conn = db.connect();
-    List<String> memberList = new ArrayList<>();
-    String sql = "select id from member";
+
+    String sql = "select * from member where id = ?";
 
     try {
       pstmt = conn.prepareStatement(sql);
+      pstmt.setString(1, id);
       rs = pstmt.executeQuery();
-
-      while(rs.next()){
-        memberList.add(rs.getString("id"));
-      }
-
+      return rs.next();
     } catch (SQLException e) {
       throw new RuntimeException(e);
     } finally{
       db.close(rs, pstmt, conn);
     }
-
-    return memberList;
   }
 
   public List<Member> getMemberList(){
@@ -67,12 +71,12 @@ public class MemberDAO {
     try {
       pstmt = conn.prepareStatement(sql);
       rs = pstmt.executeQuery();
-
+      String decrypt = AES256.decryptAES256(rs.getString("pw"), key);
       while(rs.next()){
-        memberList.add(new Member(rs.getString("id"), rs.getString("pw"), rs.getString("name"),rs.getString("tel"), rs.getString("email"), rs.getString("birth"), rs.getString("regdate")));
+        memberList.add(new Member(rs.getString("id"), decrypt, rs.getString("name"),rs.getString("tel"), rs.getString("email"), rs.getString("birth"), rs.getString("regdate"), rs.getString("address1"), rs.getString("address2")));
       }
 
-    } catch (SQLException e) {
+    } catch (Exception e) {
       throw new RuntimeException(e);
     } finally{
       db.close(rs, pstmt, conn);
@@ -93,10 +97,11 @@ public class MemberDAO {
       rs = pstmt.executeQuery();
 
       if(rs.next()){
-        member = new Member(rs.getString("id"), rs.getString("pw"), rs.getString("name"),rs.getString("tel"), rs.getString("email"), rs.getString("birth"), rs.getString("regdate"));
+        String decrypt = AES256.decryptAES256(rs.getString("pw"), key);
+        member = new Member(rs.getString("id"), decrypt, rs.getString("name"),rs.getString("tel"), rs.getString("email"), rs.getString("birth"), rs.getString("regdate"), rs.getString("address1"), rs.getString("address2"));
       }
 
-    } catch (SQLException e) {
+    } catch (Exception e) {
       throw new RuntimeException(e);
     } finally{
       db.close(rs, pstmt, conn);
@@ -109,21 +114,25 @@ public class MemberDAO {
     int cnt = 0;
 
     conn = db.connect();
-    String sql = "insert into member(id, pw, name, tel, email, birth, regdate) values(?, ?, ?, ?, ?, ?, ?)";
+
+    String sql = "insert into member(id, pw, name, tel, email, birth, address1, address2) values(?, ?, ?, ?, ?, ?, ?, ?)";
 
     try {
       pstmt = conn.prepareStatement(sql);
       pstmt.setString(1, member.getId());
-      pstmt.setString(2, member.getPw());
+      String encrypt = AES256.encryptAES256(member.getPw(), key);
+      pstmt.setString(2, encrypt);
+
       pstmt.setString(3, member.getName());
       pstmt.setString(4, member.getTel());
       pstmt.setString(5, member.getEmail());
       pstmt.setString(6, member.getBirth());
-      pstmt.setString(7, member.getRegdate());
+      pstmt.setString(7, member.getAddress1());
+      pstmt.setString(8, member.getAddress2());
 
       cnt = pstmt.executeUpdate();
 
-    } catch (SQLException e) {
+    } catch (Exception e) {
       throw new RuntimeException(e);
     }
 
@@ -136,20 +145,23 @@ public class MemberDAO {
     int cnt = 0;
 
     conn = db.connect();
-    String sql = "update member set pw=?, name=?, tel=?, email=?, birth=? where id=?";
+    String sql = "update member set pw=?, name=?, tel=?, email=?, birth=?, address1=?, address2=? where id=?";
 
     try {
       pstmt = conn.prepareStatement(sql);
-      pstmt.setString(1, member.getPw());
+      String encrypt = AES256.encryptAES256(member.getPw(), key);
+      pstmt.setString(1, encrypt);
       pstmt.setString(2, member.getName());
       pstmt.setString(3, member.getTel());
       pstmt.setString(4, member.getEmail());
       pstmt.setString(5, member.getBirth());
-      pstmt.setString(6, member.getId());
+      pstmt.setString(6, member.getAddress1());
+      pstmt.setString(7, member.getAddress2());
+      pstmt.setString(8, member.getId());
 
       cnt = pstmt.executeUpdate();
 
-    } catch (SQLException e) {
+    } catch (Exception e) {
       throw new RuntimeException(e);
     } finally{
       db.close(rs, pstmt, conn);
