@@ -3,12 +3,18 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <c:set var="rootPath" value="<%=request.getContextPath() %>" />
+<style>
+    .navbar .nav-item > a {color:antiquewhite;}
+    a:hover {font-weight: bold;}
+</style>
 
-<header class="header container-fluid" id="hd">
+<header class="header container-fluid" id="hd" style="background-color: #435334">
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="${rootPath}/index.jsp">CHUNJAE</a>
+                <a class="navbar-brand" href="#">
+                    <img src="${rootPath}/images/favicon-color.png" alt="SamSam" height="40">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -25,6 +31,7 @@
                                 <li><a class="dropdown-item" href="#">문제집</a></li>
                             </ul>
                         </li>
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 커뮤니티
