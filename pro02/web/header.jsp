@@ -2,17 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<c:set var="rootPath" value="<%=request.getContextPath() %>" />
-<style>
-    .navbar .nav-item > a {color:antiquewhite;}
-    a:hover {font-weight: bold;}
-</style>
-
-<header class="header container-fluid" id="hd" style="background-color: #435334">
+<header class="header container-fluid fixed-top" id="hd" style="background-color: #435334">
     <div class="container">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="${rootPath }/index.jsp">
                     <img src="${rootPath}/images/favicon-color.png" alt="SamSam" height="40">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,9 +45,21 @@
                         </li>
                     </ul>
                     <ul class="nav justify-content-end">
-                        <li class="nav-item"><a href="${rootPath }/member/login.jsp" class="nav-link">Login</a></li>
-                        <li class="nav-item"><a href="${rootPath }/member/term.jsp" class="nav-link">Join</a></li>
-                        <li class="nav-item"><a href="${rootPath }/NoticeListAdmin.do" class="nav-link">AdminPage</a></li>
+                    <c:choose>
+                        <c:when test="${empty session_id}">
+                            <li class="nav-item"><a href="${rootPath }/member/login.jsp" class="nav-link">Login</a></li>
+                            <li class="nav-item"><a href="${rootPath }/member/term.jsp" class="nav-link">Join</a></li>
+                        </c:when>
+                        <c:when test="${session_id eq 'admin'}">
+                            <li class="nav-item"><a href="${rootPath }/Logout.do" class="nav-link">Logout</a></li>
+                            <li class="nav-item"><a href="${rootPath }/member/term.jsp" class="nav-link">Mypage</a></li>
+                            <li class="nav-item"><a href="${rootPath }/NoticeListAdmin.do" class="nav-link">AdminPage</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li class="nav-item"><a href="${rootPath }/Logout.do" class="nav-link">Logout</a></li>
+                            <li class="nav-item"><a href="${rootPath }/member/mypage.jsp" class="nav-link">Mypage</a></li>
+                        </c:otherwise>
+                    </c:choose>
                     </ul>
                 </div>
             </div>

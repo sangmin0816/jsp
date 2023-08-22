@@ -18,6 +18,25 @@
 
 
 <style>
+    header + * {margin-top: 66px;}
+    /*헤더를 top에 고정시키므로 header 뒤에 오는 컨텐츠(뭐가 될진 몰라서 모든 것 * 선택)에는 헤더의 높이 만큼 margin을 적용시켜줘야 한다. */
+
+    .navbar .nav-item > a {color:antiquewhite;}
+    /*부트스트랩 navbar 위에 있는 아이템만 흰 글씨로. 안 그러면 토글해서 나오는 것도 흰 글씨가 되어 안 보인다.*/
+
+    /*부트스트랩 navbar 색깔을 어두운색으로 변경했으므로 색깔을 달리해줘야 한다.*/
+
+    .contents {min-height: 80vh;}
+    /* 한 페이지의 주요 내용을 차지하는 바닥은 적어도 80은 차지해야 header와 footer 사이의 간격을 확보할 수 있다.  */
+
+    .page_title {padding-top: 10px;}
+
+    .breadcrumb a {color: #435334; text-decoration: none;}
+
+    nav[aria-label="breadcrumb"] {border-bottom:2px solid #666;}
+
+    a:hover {font-weight: bold;}
+
     #tb1 { width:960px; margin:40px auto; }
     #tb1 th { background-color: #111; color:#fff; }
     .item1 { width:10%; }
@@ -26,11 +45,11 @@
     .item4 { width:10%; }
     #page-nation1 { width: 960px; margin:20px auto; }
     .list li { margin-top: 24px; }
-</style>
 
+    .dropdown-toggle::after { transition: transform 0.15s linear;}
+    .show.dropdown .dropdown-toggle::after {transform: translateY(3px);}
+    .dropdown-menu {margin-top: 0;}
 
-
-<style>
     .frm { clear:both; width:1200px; margin:0 auto; padding-top: 80px; }
 
     .tb1 { width:500px; margin:50px auto; }

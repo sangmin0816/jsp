@@ -11,8 +11,8 @@
     </style>
 </head>
 <body>
-<div class="wrap">
 <%@ include file="../header.jsp" %>
+<div class="wrap">
     <div class="container contents text-center">
         <form action="${rootPath}/JoinPro.do" method="post" onsubmit="return inform(this)">
             <div class="row">

@@ -8,9 +8,7 @@ public class Main extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletContext application = request.getServletContext();
-        String realPath = request.getSession().getServletContext().getRealPath("/");
-
-        application.setAttribute("realPath", realPath);  //${realPath }
+        application.setAttribute("rootPath", request.getContextPath());
 
         RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
         view.forward(request, response);

@@ -13,18 +13,10 @@
 </head>
 
 <body>
-<div class="container-fluid">
-    <%@ include file="../../header.jsp"%>
-    <div class="contents" style="min-height:100vh">
-        <nav aria-label="breadcrumb container-fluid" style="padding-top:28px; border-bottom:2px solid #666;">
-            <div class="container">
-                <ol class="breadcrumb justify-content-end">
-                    <li class="breadcrumb-item"><a href="${rootPath }">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Admin</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Notice</li>
-                </ol>
-            </div>
-        </nav>
+<%@ include file="../../header.jsp"%>
+<div style="display: flex; min-height: 80vh;">
+    <%@include file="adminBoardList.jsp"%>
+    <div class="container" style="margin-top: 20px;">
         <h2 class="title">공지사항</h2>
         <c:set var="notice" value="${notice}"/>
         <form action="${rootPath }/NoticeUpdatePro.do" method="post">
@@ -43,7 +35,8 @@
         </form>
         <a class="btn btn-primary" href="${rootPath }/NoticeListAdmin.do" role="button">글 목록</a>
     </div>
-    <%@ include file="../../footer.jsp" %>
+
 </div>
+<%@ include file="../../footer.jsp" %>
 </body>
 </html>

@@ -32,7 +32,6 @@
                 </c:forEach>
            </tbody>
        </table>
-    </form>
 </div>
 <%@ include file="../footer.jsp" %>
 </body>

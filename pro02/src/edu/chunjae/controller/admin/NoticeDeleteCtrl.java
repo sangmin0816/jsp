@@ -21,7 +21,8 @@ public class NoticeDeleteCtrl extends HttpServlet {
     int cnt = dao.deleteNotice(no);
     if(cnt>0){
       System.out.println("성공적으로 제거되었습니다.");
-      response.sendRedirect("/WEB-INF/admin/noticeList.jsp");
+      String path = request.getContextPath();
+      response.sendRedirect("NoticeListAdmin.do");
     } else{
       System.out.println("오류로 인해 제대로 처리되지 않았습니다.");
       PrintWriter out = response.getWriter();

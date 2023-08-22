@@ -6,7 +6,7 @@ public class DBC {
   private String DRIVER;
   private String DNS = "localhost:";
   private String PORT;
-  private String DB = "sangmin";
+  private String DB = "project2";
   private String USER = "root";
   private String PASS = "1234";
   private String URL;
