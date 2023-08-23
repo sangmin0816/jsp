@@ -18,6 +18,7 @@
     <%@include file="adminBoardList.jsp"%>
     <div class="container" style="margin-top: 20px;">
         <c:set var="book" value="${book}"/>
+        <c:set var="category" value="${category}"/>
         <div class="row">
             <div class="col-4">
                 <img class="card-img-top" src="${rootPath}/storage/${book.imgSrc }" alt="${book.title }" width="100"/>
@@ -32,7 +33,7 @@
                     <tbody>
                     <tr>
                         <th scope="row">카테고리</th>
-                        <td>${book.category}</td>
+                        <td>${category.main} ${category.sub}</td>
                     </tr>
                     <tr>
                         <th scope="row">가격</th>

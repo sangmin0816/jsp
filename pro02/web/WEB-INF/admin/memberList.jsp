@@ -22,7 +22,7 @@
                 <table class="table table-secondary" id="tb1">
                     <thead>
                     <tr>
-                        <th><input type="checkbox" disabled></th>
+                        <th></th>
                         <th>번호</th>
                         <th>아이디</th>
                         <th>이름</th>
@@ -32,10 +32,10 @@
                     <tbody>
                     <c:forEach var="member" items="${memberList}" varStatus="status">
                     <tr>
-                        <td class="check"><input type="checkbox" id="isDelete" name="idDelete" value="${member.id}"></td>
+                        <td class="check"><input type="checkbox" name="isDelete" value="${member.id}"></td>
                         <td>${status.count}</td>
                         <td>
-                            <a class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" href="${rootPath }/MemberGetAdmin.do?no=${member.id}">${member.id}</a>
+                            <a class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" href="${rootPath }/MemberGetAdmin.do?id=${member.id}" style="display:inline-block; width:100%;>${member.id}</a>
                         </td>
                         <td>${member.name}</td>
                         <td>${member.regdate}</td>

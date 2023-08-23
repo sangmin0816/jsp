@@ -128,4 +128,24 @@ public class NoticeDAO {
 
     return cnt;
   }
+
+  public int countUp(int no){
+    int cnt = 0;
+    conn = db.connect();
+    Notice notice = new Notice();
+
+    String sql = "update notice set visited = visited+1 where no=?";
+
+    try {
+      pstmt = conn.prepareStatement(sql);
+      pstmt.setInt(1, no);
+      cnt = pstmt.executeUpdate();
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    } finally{
+      db.close(rs, pstmt, conn);
+    }
+
+    return cnt;
+  }
 }

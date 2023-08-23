@@ -1,7 +1,9 @@
 package edu.chunjae.controller.product;
 
 
+import edu.chunjae.dto.Category;
 import edu.chunjae.dto.Product;
+import edu.chunjae.model.CategoryDAO;
 import edu.chunjae.model.ProductDAO;
 
 import javax.servlet.RequestDispatcher;
@@ -22,7 +24,11 @@ public class BookGetCtrl extends HttpServlet {
     ProductDAO dao = new ProductDAO();
     Product product = dao.getProduct(id);
 
+    CategoryDAO cdao = new CategoryDAO();
+    Category category = cdao.getCategory(product.getCategory());
+
     request.setAttribute("book", product);
+    request.setAttribute("category", category);
 
     RequestDispatcher view = request.getRequestDispatcher("/product/bookGet.jsp");
     view.forward(request, response);

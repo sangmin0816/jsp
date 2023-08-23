@@ -24,6 +24,7 @@ public class JoinProCtrl extends HttpServlet {
         new_member.setEmail(request.getParameter("email"));
         new_member.setTel(request.getParameter("tel"));
         new_member.setBirth(request.getParameter("birth"));
+        new_member.setPostcode(request.getParameter("postcode"));
         new_member.setAddress1(request.getParameter("address1"));
         new_member.setAddress2(request.getParameter("address2"));
 

@@ -74,7 +74,7 @@ public class MemberDAO {
 
       while(rs.next()){
         String decrypt = AES256.decryptAES256(rs.getString("pw"), key);
-        memberList.add(new Member(rs.getString("id"), decrypt, rs.getString("name"), rs.getString("tel"), rs.getString("email"), rs.getString("birth"), rs.getString("regdate"), rs.getString("address1"), rs.getString("address2")));
+        memberList.add(new Member(rs.getString("id"), decrypt, rs.getString("name"), rs.getString("tel"), rs.getString("email"), rs.getString("birth"), rs.getString("regdate"), rs.getString("postcode"), rs.getString("address1"), rs.getString("address2")));
       }
 
     } catch (Exception e) {
@@ -99,7 +99,7 @@ public class MemberDAO {
 
       if(rs.next()){
         String decrypt = AES256.decryptAES256(rs.getString("pw"), key);
-        member = new Member(rs.getString("id"), decrypt, rs.getString("name"),rs.getString("tel"), rs.getString("email"), rs.getString("birth"), rs.getString("regdate"), rs.getString("address1"), rs.getString("address2"));
+        member = new Member(rs.getString("id"), decrypt, rs.getString("name"),rs.getString("tel"), rs.getString("email"), rs.getString("birth"), rs.getString("regdate"), rs.getString("postcode"), rs.getString("address1"), rs.getString("address2"));
       }
 
     } catch (Exception e) {
@@ -116,20 +116,20 @@ public class MemberDAO {
 
     conn = db.connect();
 
-    String sql = "insert into member(id, pw, name, tel, email, birth, address1, address2) values(?, ?, ?, ?, ?, ?, ?, ?)";
+    String sql = "insert into member(id, pw, name, tel, email, birth, address1, address2, postcode) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     try {
       pstmt = conn.prepareStatement(sql);
       pstmt.setString(1, member.getId());
       String encrypt = AES256.encryptAES256(member.getPw(), key);
       pstmt.setString(2, encrypt);
-
       pstmt.setString(3, member.getName());
       pstmt.setString(4, member.getTel());
       pstmt.setString(5, member.getEmail());
       pstmt.setString(6, member.getBirth());
       pstmt.setString(7, member.getAddress1());
       pstmt.setString(8, member.getAddress2());
+      pstmt.setString(9, member.getPostcode());
 
       cnt = pstmt.executeUpdate();
 
@@ -146,7 +146,7 @@ public class MemberDAO {
     int cnt = 0;
 
     conn = db.connect();
-    String sql = "update member set pw=?, name=?, tel=?, email=?, birth=?, address1=?, address2=? where id=?";
+    String sql = "update member set pw=?, name=?, tel=?, email=?, birth=?, address1=?, address2=?, postcode=? where id=?";
 
     try {
       pstmt = conn.prepareStatement(sql);
@@ -158,7 +158,8 @@ public class MemberDAO {
       pstmt.setString(5, member.getBirth());
       pstmt.setString(6, member.getAddress1());
       pstmt.setString(7, member.getAddress2());
-      pstmt.setString(8, member.getId());
+      pstmt.setString(8, member.getPostcode());
+      pstmt.setString(9, member.getId());
 
       cnt = pstmt.executeUpdate();
 

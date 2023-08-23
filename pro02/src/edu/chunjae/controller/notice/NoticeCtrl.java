@@ -18,6 +18,7 @@ public class NoticeCtrl extends HttpServlet {
     int no = Integer.parseInt(request.getParameter("no"));
 
     NoticeDAO dao = new NoticeDAO();
+    int cnt = dao.countUp(no);
     Notice notice = dao.getNotice(no);
     request.setAttribute("notice", notice);
 

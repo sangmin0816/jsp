@@ -12,12 +12,19 @@
 </head>
 <body>
 <%@ include file="../header.jsp" %>
-<div class="wrap">
-    <div class="container contents text-center">
-        <form class="form_row" action="${rootPath}/JoinPro.do" method="post" onsubmit="return inform(this)">
+
+<div class="container contents text-center">
+    <h2 class="page_title text-center">회원가입</h2>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-end">
+            <li class="breadcrumb-item"><a href="${rootPath }">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">회원가입</li>
+        </ol>
+    </nav>
+    <form class="form_row" action="${rootPath}/JoinPro.do" method="post" onsubmit="return inform(this)">
             <div class="row">
                 <div class="col-2"><label for="name" class="form-label">이름</label></div>
-                <div class="col-8"><input type="text" class="form-control col-10" id="name" name="name"></div>
+                <div class="col-8"><input type="text" class="form-control" id="name" name="name"></div>
             </div>
             <div class="row">
                 <div class="col-2"><label for="id" class="form-label">아이디</label></div>
@@ -62,7 +69,8 @@
             </div>
             <input type="submit" class="btn btn-primary mb-3" value="가입하기">
         </form>
-    </div>
+</div>
+
 <%@ include file="../footer.jsp" %>
 </body>
 </html>

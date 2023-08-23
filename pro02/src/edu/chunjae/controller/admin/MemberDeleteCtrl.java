@@ -23,6 +23,7 @@ public class MemberDeleteCtrl extends HttpServlet {
     MemberDAO dao = new MemberDAO();
 
     for(String s: isdelete){
+      System.out.println(s);
       int cnt = dao.deleteMember(s);
       if(cnt>0){
         System.out.println("회원 "+s+"가 제거되었습니다.");
@@ -34,7 +35,6 @@ public class MemberDeleteCtrl extends HttpServlet {
     }
 
     System.out.println("성공적으로 제거되었습니다.");
-    String path = request.getContextPath();
     response.sendRedirect("MemberListAdmin.do");
   }
 }

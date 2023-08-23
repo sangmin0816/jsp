@@ -2,11 +2,23 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<style>
+    header + * {margin-top: 66px;}
+    /*헤더를 top에 고정시키므로 header 뒤에 오는 컨텐츠(뭐가 될진 몰라서 모든 것 * 선택)에는 헤더의 높이 만큼 margin을 적용시켜줘야 한다. */
+
+    .navbar .nav-item > a {color:antiquewhite;}
+    /*부트스트랩 navbar 위에 있는 아이템만 흰 글씨로. 안 그러면 토글해서 나오는 것도 흰 글씨가 되어 안 보인다.*/
+
+    .navbar .nav-item {margin: auto 10px;}
+    /*부트스트랩 navbar 색깔을 어두운색으로 변경했으므로 색깔을 달리해줘야 한다.*/
+
+</style>
+
 <header class="header container-fluid fixed-top" id="hd" style="background-color: #435334">
     <div class="container">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="${rootPath }/index.jsp">
+                <a class="navbar-brand" href="${rootPath }">
                     <img src="${rootPath}/images/favicon-color.png" alt="SamSam" height="40">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +36,6 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="${rootPath }/BookList.do">교과서</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="${rootPath }/SourceUpload.do">업로드</a></li>
                                 <li><a class="dropdown-item" href="#">문제집</a></li>
                             </ul>
                         </li>
@@ -36,28 +47,26 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="${rootPath }/NoticeList.do">공지사항</a></li>
                                 <li><a class="dropdown-item" href="${rootPath }/">묻고답하기</a></li>
-                                <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="${rootPath }/">학습후기</a></li>
                             </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
                     <ul class="nav justify-content-end">
                     <c:choose>
                         <c:when test="${empty session_id}">
-                            <li class="nav-item"><a href="${rootPath }/member/login.jsp" class="nav-link">Login</a></li>
-                            <li class="nav-item"><a href="${rootPath }/member/term.jsp" class="nav-link">Join</a></li>
+                            <li class="nav-item"><a href="${rootPath }/member/login.jsp" class="nav-link">로그인</a></li>
+                            <li class="nav-item"><a href="${rootPath }/member/term.jsp" class="nav-link">회원가입</a></li>
+                            <li class="nav-item"><a href="${rootPath }/member/map.jsp" class="nav-link">오시는 길</a></li>
                         </c:when>
                         <c:when test="${session_id eq 'admin'}">
-                            <li class="nav-item"><a href="${rootPath }/Logout.do" class="nav-link">Logout</a></li>
-                            <li class="nav-item"><a href="${rootPath }/Mypage.do" class="nav-link">Mypage</a></li>
-                            <li class="nav-item"><a href="${rootPath }/NoticeListAdmin.do" class="nav-link">AdminPage</a></li>
+                            <li class="nav-item"><a href="${rootPath }/Logout.do" class="nav-link">로그아웃</a></li>
+                            <li class="nav-item"><a href="${rootPath }/Mypage.do" class="nav-link">내 정보</a></li>
+                            <li class="nav-item"><a href="${rootPath }/MemberListAdmin.do" class="nav-link">관리자</a></li>
                         </c:when>
                         <c:otherwise>
-                            <li class="nav-item"><a href="${rootPath }/Logout.do" class="nav-link">Logout</a></li>
-                            <li class="nav-item"><a href="${rootPath }/Mypage.do" class="nav-link">Mypage</a></li>
+                            <li class="nav-item"><a href="${rootPath }/Logout.do" class="nav-link">로그아웃</a></li>
+                            <li class="nav-item"><a href="${rootPath }/Mypage.do" class="nav-link">내 정보</a></li>
+                            <li class="nav-item"><a href="${rootPath }/member/map.jsp" class="nav-link">오시는 길</a></li>
                         </c:otherwise>
                     </c:choose>
                     </ul>

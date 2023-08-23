@@ -11,7 +11,7 @@
 <body>
 <%@ include file="../header.jsp" %>
 
-<div class="container contents">
+<div class="container contents text-center">
     <h2 class="page_title text-center">로그인</h2>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb justify-content-end">
@@ -21,24 +21,18 @@
     </nav>
 
     <%-- 로그인 Form   --%>
-    <form action="${rootPath}/LoginPro.do" id="login_form" class="form" method="post">
-        <table class="tb1">
-            <tbody>
-            <tr>
-                <td><input type="text" name="id" id="id" class="indata" placeholder="아이디 입력" autofocus required></td>
-            </tr>
-            <tr>
-                <td><input type="password" name="pw" id="pw" class="indata" placeholder="패스워드 입력" required></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="btn_group">
-                        <input type="submit" value="로그인" class="inBtn inBtn1">
-                    </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+    <form action="${rootPath}/LoginPro.do" id="login_form" class="form_row" method="post">
+        <div class="container justify-content-center" style="max-width: 400px;">
+            <div class="row">
+                <input class="form-control" type="text" name="id" id="id" placeholder="아이디 입력" autofocus required>
+            </div>
+            <div class="row">
+                <input class="form-control" type="password" name="pw" id="pw"  placeholder="패스워드 입력" required>
+            </div>
+            <a href="" style="display: block; text-align: end; font-size: 8px; color: gray; margin-bottom: 20px;">아이디/비밀번호 찾기</a>
+            <input type="submit" value="로그인" class="btn btn-primary mb-3">
+            <a href="${rootPath }/member/term.jsp" class="btn btn-primary mb-3">회원가입</a>
+        </div>
     </form>
 </div>
 

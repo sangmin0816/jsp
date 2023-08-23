@@ -13,13 +13,13 @@
 
 <body>
 <%@ include file="../header.jsp"%>
-<div class="container contents">
+<div class="container contents text-center">
     <h2 class="page_title text-center">교과서 목록</h2>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb justify-content-end">
             <li class="breadcrumb-item"><a href="${rootPath }">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Community</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Notice</li>
+            <li class="breadcrumb-item"><a href="#">상품</a></li>
+            <li class="breadcrumb-item active" aria-current="page">교과서</li>
         </ol>
     </nav>
     <div class="d-flex align-content-start flex-wrap">

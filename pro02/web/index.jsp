@@ -13,7 +13,7 @@
 
 <body>
 <%@ include file="/header.jsp"%>
-<div class="container-fluid" style="min-height: 50vh; padding: 0;">
+<div class="container-fluid contents" style="padding: 0;">
     <div id="carouselExampleDark" class="carousel carousel-dark slide">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>

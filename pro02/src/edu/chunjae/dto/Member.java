@@ -8,9 +8,17 @@ public class Member {
   private String email;
   private String birth;
   private String regdate;
-
+  private String postcode;
   private String address1;
   private String address2;
+
+  public String getPostcode() {
+    return postcode;
+  }
+
+  public void setPostcode(String postcode) {
+    this.postcode = postcode;
+  }
 
   public String getAddress1() {
     return address1;
@@ -31,8 +39,8 @@ public class Member {
   public Member() {
   }
 
-  public Member(String id, String pw, String name, String tel, String email, String birth, String regdate, String address1, String address2) {
-    this.id = id; this.pw = pw; this.name = name; this.tel = tel; this.email = email; this.birth = birth; this.regdate = regdate; this.address1=address1; this.address2=address2;
+  public Member(String id, String pw, String name, String tel, String email, String birth, String regdate, String postcode, String address1, String address2) {
+    this.id = id; this.pw = pw; this.name = name; this.tel = tel; this.email = email; this.birth = birth; this.regdate = regdate; this.postcode=postcode; this.address1=address1; this.address2=address2;
   }
 
   public String getId() {

@@ -29,8 +29,12 @@ public class LoginCtrl extends HttpServlet {
             response.sendRedirect(path+"/index.jsp");
         } else{
             System.out.println("아이디 또는 비밀번호가 일치하지 않습니다.");
+
+            response.setCharacterEncoding("UTF-8");
+            response.setContentType("text/html; charset=UTF-8");
             PrintWriter out = response.getWriter();
-            out.println("<script>history.go(-1);</script>");
+
+            out.println("<script>alert('아이디 또는 비밀번호가 일치하지 않습니다.');history.go(-1);</script>");
         }
     }
 }
