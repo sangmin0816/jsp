@@ -7,14 +7,14 @@
     <title>회원가입</title>
     <%@ include file="../common.jsp" %>
     <style>
-        .row {margin: 20px auto;}
+
     </style>
 </head>
 <body>
 <%@ include file="../header.jsp" %>
 <div class="wrap">
     <div class="container contents text-center">
-        <form action="${rootPath}/JoinPro.do" method="post" onsubmit="return inform(this)">
+        <form class="form_row" action="${rootPath}/JoinPro.do" method="post" onsubmit="return inform(this)">
             <div class="row">
                 <div class="col-2"><label for="name" class="form-label">이름</label></div>
                 <div class="col-8"><input type="text" class="form-control col-10" id="name" name="name"></div>

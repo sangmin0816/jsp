@@ -9,17 +9,17 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
         <li>
-            <a href="#" class="nav-link text-white">
+            <a href="${rootPath}/MemberListAdmin.do" class="nav-link text-white">
                 회원 관리
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
+            <a href="${rootPath}/NoticeListAdmin.do" class="nav-link" aria-current="page">
                 공지사항 관리
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link text-white">
+            <a href="${rootPath}/BookListAdmin.do" class="nav-link text-white">
                 교재 관리
             </a>
         </li>

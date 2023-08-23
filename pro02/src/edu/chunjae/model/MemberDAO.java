@@ -71,9 +71,10 @@ public class MemberDAO {
     try {
       pstmt = conn.prepareStatement(sql);
       rs = pstmt.executeQuery();
-      String decrypt = AES256.decryptAES256(rs.getString("pw"), key);
+
       while(rs.next()){
-        memberList.add(new Member(rs.getString("id"), decrypt, rs.getString("name"),rs.getString("tel"), rs.getString("email"), rs.getString("birth"), rs.getString("regdate"), rs.getString("address1"), rs.getString("address2")));
+        String decrypt = AES256.decryptAES256(rs.getString("pw"), key);
+        memberList.add(new Member(rs.getString("id"), decrypt, rs.getString("name"), rs.getString("tel"), rs.getString("email"), rs.getString("birth"), rs.getString("regdate"), rs.getString("address1"), rs.getString("address2")));
       }
 
     } catch (Exception e) {

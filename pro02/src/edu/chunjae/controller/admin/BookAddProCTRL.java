@@ -1,9 +1,9 @@
-package edu.chunjae.controller.source;
+package edu.chunjae.controller.admin;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-import edu.chunjae.dto.Source;
-import edu.chunjae.model.SourceDAO;
+import edu.chunjae.dto.Product;
+import edu.chunjae.model.ProductDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -18,22 +18,24 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-@WebServlet("/SourceUploadPro.do")
-public class SourceUploadProCTRL extends HttpServlet {
+@WebServlet("/BookAddPro.do")
+public class BookAddProCTRL extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String msg = "";
         ServletContext application = request.getServletContext();
+
         try {
             String saveDirectory = application.getRealPath("/storage"); //실제 저장 경로
             int maxSize = 1024*1024*10;     //10MB
             String encoding = "UTF-8";
 
             MultipartRequest mr = new MultipartRequest(request, saveDirectory, maxSize, encoding, new DefaultFileRenamePolicy());
-            Source file = new Source();
-            file.setUname(mr.getParameter("uname"));
-            file.setSubject(mr.getParameter("subject"));
-            file.setContent(mr.getParameter("content"));
+            Product product= new Product();
+            product.setCategory(Integer.parseInt(mr.getParameter("category")));
+            product.setTitle(mr.getParameter("title"));
+            product.setPrice(Integer.parseInt(mr.getParameter("price")));
+            product.setContent(mr.getParameter("content"));
 
             Enumeration files = mr.getFileNames();
             String item = (String) files.nextElement();
@@ -42,24 +44,32 @@ public class SourceUploadProCTRL extends HttpServlet {
             String fileName = mr.getFilesystemName(item);  //파일이름만 추출
 
             File upfile = mr.getFile(item); //실제 업로드
+
             if(upfile.exists()){
                 msg = "파일 업로드 성공";
+                System.out.println("파일 업로드 성공");
             } else {
                 msg = "파일 업로드 실패";
+                System.out.println("파일 업로드 실패");
             }
+            if(upfile.getName().isEmpty()){
+                product.setImgSrc("empty.jpg");
+            }
+            product.setImgSrc(upfile.getName());
+            System.out.println();
 
-            file.setFilename(upfile.getName());
+            ProductDAO dao = new ProductDAO();
+            int cnt = dao.addProduct(product);
+            List<Product> productList = new ArrayList<>();
 
-            SourceDAO dao = new SourceDAO();
-            int cnt = dao.fileUploadTest(file);
-            List<Source> fileList = new ArrayList<>();
+
             if(cnt>0){
-              fileList = dao.getFileTestList();
-              request.setAttribute("fileList",fileList);
-              RequestDispatcher view = request.getRequestDispatcher("/source/uploadList.jsp");
+              productList = dao.getProductList(1);
+              request.setAttribute("bookList",productList);
+              RequestDispatcher view = request.getRequestDispatcher("/BookListAdmin.do");
               view.forward(request, response);
             } else {
-                response.sendRedirect("/SourceUpload.do");
+                response.sendRedirect("/BookAdd.do");
             }
         } catch(Exception e){
             System.out.println(e.getMessage());

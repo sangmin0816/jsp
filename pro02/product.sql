@@ -59,7 +59,7 @@ CREATE TABLE video(
 -- 내가 한 거: 상품번호, 카테고리 번호, 상품명, 상품내용, 상품이미지, 등록일
 CREATE TABLE product(
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	category int,
+	category INT,
 	price INT NOT NULL DEFAULT 0,
 	title VARCHAR(100) NOT NULL,
 	content VARCHAR(5000),

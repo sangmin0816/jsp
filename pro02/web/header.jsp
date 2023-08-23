@@ -14,12 +14,15 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="${rootPath}/product/introduce.jsp">쌤쌤 소개</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="${rootPath }/ProList.do" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 상품
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="${rootPath }/ProList.do">교과서</a></li>
+                                <li><a class="dropdown-item" href="${rootPath }/BookList.do">교과서</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="${rootPath }/SourceUpload.do">업로드</a></li>
                                 <li><a class="dropdown-item" href="#">문제집</a></li>
@@ -38,9 +41,6 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">ETC</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
@@ -52,12 +52,12 @@
                         </c:when>
                         <c:when test="${session_id eq 'admin'}">
                             <li class="nav-item"><a href="${rootPath }/Logout.do" class="nav-link">Logout</a></li>
-                            <li class="nav-item"><a href="${rootPath }/member/term.jsp" class="nav-link">Mypage</a></li>
+                            <li class="nav-item"><a href="${rootPath }/Mypage.do" class="nav-link">Mypage</a></li>
                             <li class="nav-item"><a href="${rootPath }/NoticeListAdmin.do" class="nav-link">AdminPage</a></li>
                         </c:when>
                         <c:otherwise>
                             <li class="nav-item"><a href="${rootPath }/Logout.do" class="nav-link">Logout</a></li>
-                            <li class="nav-item"><a href="${rootPath }/member/mypage.jsp" class="nav-link">Mypage</a></li>
+                            <li class="nav-item"><a href="${rootPath }/Mypage.do" class="nav-link">Mypage</a></li>
                         </c:otherwise>
                     </c:choose>
                     </ul>

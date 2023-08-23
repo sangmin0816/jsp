@@ -24,7 +24,6 @@ public class LoginCtrl extends HttpServlet {
             System.out.println("정상적으로 로그인되었습니다.");
             HttpSession session = request.getSession(); // 세션 생성
             session.setAttribute("session_id", id);
-            session.setAttribute("session_pw", pw);
             String path = request.getContextPath();
 
             response.sendRedirect(path+"/index.jsp");

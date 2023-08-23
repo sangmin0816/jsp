@@ -10,7 +10,6 @@ public class Product {
   private int price = 0;
   private String title;
   private String content;
-  public List<String> srcList = new ArrayList<>();
   private String imgSrc;
   private String regdate;
 
@@ -19,12 +18,8 @@ public class Product {
 
   public Product(int id, int category, int price, String title, String content, String imgSrc, String regdate) {
     this.id = id; this.category = category; this.price = price; this.title = title; this.content = content; this.imgSrc = imgSrc; this.regdate = regdate;
-    this.setSrcList();
   }
 
-  public void setSrcList() {
-    this.srcList = new ArrayList<>(Arrays.asList(imgSrc.split(",")));
-  }
 
   public int getId() {
     return id;
@@ -70,9 +65,7 @@ public class Product {
     return imgSrc;
   }
 
-  public void setImgSrc(String imgSrc) {
-    this.imgSrc = this.srcList.toString();
-  }
+  public void setImgSrc(String imgSrc) {this.imgSrc = imgSrc;}
 
   public String getRegdate() {
     return regdate;

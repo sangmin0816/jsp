@@ -9,7 +9,6 @@
 
 <script src="${rootPath}/js/jquery-1.10.0.js"></script>
 <script src="${rootPath}/js/nav.js"></script>
-<link rel="stylesheet" href="${rootPath}/css/nav.css">
 
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -24,6 +23,7 @@
     .navbar .nav-item > a {color:antiquewhite;}
     /*부트스트랩 navbar 위에 있는 아이템만 흰 글씨로. 안 그러면 토글해서 나오는 것도 흰 글씨가 되어 안 보인다.*/
 
+    .navbar .nav-item {margin: auto 10px;}
     /*부트스트랩 navbar 색깔을 어두운색으로 변경했으므로 색깔을 달리해줘야 한다.*/
 
     .contents {min-height: 80vh;}
@@ -36,6 +36,9 @@
     nav[aria-label="breadcrumb"] {border-bottom:2px solid #666;}
 
     a:hover {font-weight: bold;}
+
+    .form_row .row {margin: 20px auto;}
+
 
     #tb1 { width:960px; margin:40px auto; }
     #tb1 th { background-color: #111; color:#fff; }
