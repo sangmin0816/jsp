@@ -1,8 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ page import="java.util.*, java.lang.*" %>
-<%@ page import="java.text.*, java.net.InetAddress" %>
+
 <c:set var="path" value="<%=request.getContextPath() %>" />
 <!DOCTYPE html>
 <html lang="en">
@@ -10,16 +9,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>파일 업로드</title>
-    <jsp:include page="../../common.jsp" />
+    <%@ include file="../../common.jsp" %>
 </head>
 <body>
-<jsp:include page="../../header.jsp" />
+<%@ include file="../../header.jsp" %>
 <div style="display: flex; min-height: 80vh;">
     <%@include file="adminBoardList.jsp"%>
     <div class="container" style="margin-top: 20px;">
         <h2 class="title">교재 추가</h2>
         <div class="container">
-            <form class="form_row" action="${path }/BookAddPro.do" method="post" enctype="multipart/form-data">
+            <form class="form_row" action="${rootPath }/BookAddPro.do" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-2"><label for="category">카테고리</label></div>
                     <div class="col-8">
