@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="lib10">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pro1/out/artifacts/pro1_war_exploded/WEB-INF/lib/jcl-over-slf4j-1.7.36.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro1/out/artifacts/pro1_war_exploded/WEB-INF/lib/mariadb-java-client-3.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro1/out/artifacts/pro1_war_exploded/WEB-INF/lib/jna-5.12.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro1/out/artifacts/pro1_war_exploded/WEB-INF/lib/slf4j-api-1.7.36.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro1/out/artifacts/pro1_war_exploded/WEB-INF/lib/checker-qual-3.23.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro1/out/artifacts/pro1_war_exploded/WEB-INF/lib/javax.mail-api-1.5.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro1/out/artifacts/pro1_war_exploded/WEB-INF/lib/jna-platform-5.12.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro1/out/artifacts/pro1_war_exploded/WEB-INF/lib/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro1/out/artifacts/pro1_war_exploded/WEB-INF/lib/waffle-jna-3.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro1/out/artifacts/pro1_war_exploded/WEB-INF/lib/error_prone_annotations-2.10.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro1/out/artifacts/pro1_war_exploded/WEB-INF/lib/javax.mail-1.5.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro1/out/artifacts/pro1_war_exploded/WEB-INF/lib/caffeine-2.9.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro1/out/artifacts/pro1_war_exploded/WEB-INF/lib/tomcat-servlet-api-9.0.78.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro1/out/artifacts/pro1_war_exploded/WEB-INF/lib/javax.servlet-api-4.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

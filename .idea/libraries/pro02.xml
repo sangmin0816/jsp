@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="pro02">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/postgresql-42.6.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/javax.servlet-api-4.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/jstl-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/checker-qual-3.31.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

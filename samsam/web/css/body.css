@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.content {
+    margin-top: 56px;
+    min-height: 80vh;
+}
+
+.main_content {
+    margin-top: 56px;
+}
+
+.form_row input, label, select{
+    margin: 20px auto;
+}
+
+.form_row .row{
+    align-content: center;
+    text-align: center;
+}

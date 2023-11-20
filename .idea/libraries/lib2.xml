@@ -1,0 +1,47 @@
+<component name="libraryTable">
+  <library name="lib2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/commons-lang-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/el-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/checker-qual-3.31.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/utils-json-parser-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/jsp-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/mariadb-java-client-3.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/javax.persistence.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/javax.servlet.jsp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/postgresql-42.6.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/cos-05Nov2002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/commons-dbutils-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/javax.jms.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/json-20151123.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/javax.ejb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/javax.servlet.jsp.jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/junit-4.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/commons-dbcp-1.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/jsoup-1.12.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/json-lib-2.0-jdk15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/commons-beanutils-1.9.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/standard-1.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/commons-collections-3.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/commons-fileupload-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/javax.json-api-1.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/jstl-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/commons-io-2.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/javax.servlet-api-4.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/gson-2.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/javax.servlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/hamcrest-core-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/javax.resource.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/el-api-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/json-parser-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/tomcat-servlet-api-9.0.78.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/javax.servlet-api-4.0.1-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/javax.annotation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/json-20200518.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro02/out/artifacts/pro02/WEB-INF/lib/javax.transaction.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
